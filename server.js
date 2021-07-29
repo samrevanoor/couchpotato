@@ -5,6 +5,8 @@ const logger = require('morgan');
 
 const app = express();
 
+require('dotenv').config();
+
 app.use(logger('dev'));
 app.use(express.json());
 
