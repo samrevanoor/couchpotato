@@ -6,7 +6,7 @@ function NavBar(props){
     return (
         <div className="NavBar-header">
             <span className="NavBar-title">
-                couch potato
+                <Link to="/">couch potato</Link>
             </span>
             <span className="NavBar-links">
                 <Link to="/signup">sign up</Link>&nbsp;
