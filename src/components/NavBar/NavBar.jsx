@@ -9,6 +9,10 @@ function NavBar(props){
                 <Link to="/">couch potato</Link>
             </span>
             <span className="NavBar-links">
+                <Link to="/faves">my faves</Link>&nbsp;
+            | &nbsp;
+                <Link to="/watchlist">my watch list</Link>&nbsp;
+            | &nbsp;
                 <Link to="/logout" onClick={props.handleLogout}>log out</Link>
             </span>
         </div>

@@ -34,14 +34,14 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <header className="header-footer">Log In</header><br/>
+        <header className="header-footer">log in</header><br/>
         <form className="form-horizontal" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <div className="col-sm-12">
               <input
                 type="email"
                 className="form-control"
-                placeholder="Email"
+                placeholder="email"
                 value={this.state.email}
                 name="email"
                 onChange={this.handleChange}
@@ -53,7 +53,7 @@ class LoginPage extends Component {
               <input
                 type="password"
                 className="form-control"
-                placeholder="Password"
+                placeholder="password"
                 value={this.state.pw}
                 name="pw"
                 onChange={this.handleChange}
@@ -62,9 +62,9 @@ class LoginPage extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>
+              <button className="btn btn-default">log in</button>
               &nbsp;&nbsp;&nbsp;
-              <Link to="/">Cancel</Link>
+              <Link to="/">cancel</Link>
             </div>
           </div>
         </form>

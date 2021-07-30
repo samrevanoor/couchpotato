@@ -4,6 +4,8 @@ import NavBar from "../../components/NavBar/NavBar";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import LogoutPage from "../LogoutPage/LogoutPage";
+import FavesPage from "../FavesPage/FavesPage";
+import WatchListPage from "../WatchListPage/WatchListPage";
 import HomePage from "../HomePage/HomePage";
 import userService from "../../utils/userService";
 import "./App.css";
@@ -58,6 +60,22 @@ class App extends Component {
             path="/logout"
             render={() => (
               <LogoutPage
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/faves"
+            render={() => (
+              <FavesPage
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/watchlist"
+            render={() => (
+              <WatchListPage
               />
             )}
           />
