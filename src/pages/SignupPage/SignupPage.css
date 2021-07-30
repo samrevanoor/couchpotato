@@ -1,8 +1,5 @@
 .SignupPage {
-  /* display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center; */
+  text-align: center;
   position: absolute;
   left: 40%;
   top: 30%;
