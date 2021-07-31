@@ -1,9 +1,6 @@
 import { React, Component } from "react";
 import "../GeneratorForm/GeneratorForm.css";
-
-const currentYear = (new Date()).getFullYear();
-const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
-console.log(range(currentYear, currentYear - 50, -1)); 
+import yearRange from "../../utils/yearArray";
 
 class GeneratorForm extends Component {
   constructor(props) {
@@ -19,6 +16,16 @@ class GeneratorForm extends Component {
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    });
+  };
+
+  handlePerformersChange = (e) => {
+    let performerArray = e.target.value
+      .trim()
+      .replace(/\s*,\s*/g, ",")
+      .split(",");
+    this.setState({
+      performers: performerArray,
     });
   };
 
@@ -41,26 +48,28 @@ class GeneratorForm extends Component {
           <div>
             <div>
               <label>genre </label>
-              <select name="genre" onChange={this.handleChange}>
-                  <option value="comedy">comedy</option>
-                  <option value="romance">romance</option>
-                  <option value="drama">drama</option>
-                  <option value="action">action</option>
-                  <option value="fantasy">fantasy</option>
-                  <option value="horror">horror</option>
-                  <option value="documentary">documentary</option>
+              <select name="genre" onChange={(e)=>this.handleChange(e)}>
+                <option value="comedy">comedy</option>
+                <option value="romance">romance</option>
+                <option value="drama">drama</option>
+                <option value="action">action</option>
+                <option value="fantasy">fantasy</option>
+                <option value="horror">horror</option>
+                <option value="documentary">documentary</option>
               </select>
             </div>
           </div>
           <div>
             <div>
               <label>year </label>
-              <input
-                type="number"
-                value={this.state.year}
-                name="year"
-                onChange={this.handleChange}
-              />
+              <select name="year" onChange={(e)=>this.handleChange(e)}>
+                {yearRange()}
+              </select>
+              &nbsp;
+              <label>to</label>
+              <select name="year" onChange={(e)=>this.handleChange(e)}>
+                {yearRange()}
+              </select>
             </div>
           </div>
           <div>
@@ -71,7 +80,7 @@ class GeneratorForm extends Component {
                 placeholder="separate with commas"
                 value={this.state.performers}
                 name="performers"
-                onChange={this.handleChange}
+                onChange={(e)=>this.handlePerformersChange(e)}
               />
             </div>
           </div>
@@ -82,7 +91,7 @@ class GeneratorForm extends Component {
                 type="text"
                 value={this.state.director}
                 name="director"
-                onChange={this.handleChange}
+                onChange={(e)=>this.handleChange(e)}
               />
             </div>
           </div>
