@@ -48,7 +48,8 @@ class GeneratorForm extends Component {
           <div>
             <div>
               <label>genre </label>
-              <select name="genre" onChange={(e)=>this.handleChange(e)}>
+              <select name="genre" onChange={(e) => this.handleChange(e)}>
+                <option key="emptyGenre" value=""></option>
                 <option value="comedy">comedy</option>
                 <option value="romance">romance</option>
                 <option value="drama">drama</option>
@@ -62,14 +63,19 @@ class GeneratorForm extends Component {
           <div>
             <div>
               <label>year </label>
-              <select name="year" onChange={(e)=>this.handleChange(e)}>
+              <select name="year" onChange={(e) => this.handleChange(e)}>
+                <option key="emptyStart" value=""></option>
                 {yearRange()}
               </select>
               &nbsp;
               <label>to</label>
-              <select name="year" onChange={(e)=>this.handleChange(e)}>
+              <select name="year" onChange={(e) => this.handleChange(e)}>
+                <option key="emptyStop" value=""></option>
                 {yearRange()}
               </select>
+              <span className="GeneratorForm-instruction">
+                leave blank if you don't mind any year
+              </span>
             </div>
           </div>
           <div>
@@ -80,7 +86,7 @@ class GeneratorForm extends Component {
                 placeholder="separate with commas"
                 value={this.state.performers}
                 name="performers"
-                onChange={(e)=>this.handlePerformersChange(e)}
+                onChange={(e) => this.handlePerformersChange(e)}
               />
             </div>
           </div>
@@ -91,7 +97,7 @@ class GeneratorForm extends Component {
                 type="text"
                 value={this.state.director}
                 name="director"
-                onChange={(e)=>this.handleChange(e)}
+                onChange={(e) => this.handleChange(e)}
               />
             </div>
           </div>
