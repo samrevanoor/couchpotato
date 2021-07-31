@@ -1,8 +1,8 @@
 .Footer-body {
     font-size: 18px;
     position: fixed;
-    bottom: 5%;
-    width: 95%;
+    bottom: 2%;
+    width: 100%;
     text-align: center;
     font-weight: 500;
     font-family: 'Gaegu', cursive;
@@ -10,4 +10,8 @@
 
 .Footer-name {
     font-size: 16px;
+}
+
+.Footer-notice {
+    font-size: 12px;
 }
