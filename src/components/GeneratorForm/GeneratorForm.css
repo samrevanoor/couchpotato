@@ -3,8 +3,10 @@
   border: 2px solid black;
   border-radius: 20px;
   background-color: rgba(255, 174, 0, 0.911);
-  padding: 50px 20px;
+  padding: 20px;
   text-align: left;
+  width: 70%;
+  display: inline-block;
 }
 
 .GeneratorForm-body input {

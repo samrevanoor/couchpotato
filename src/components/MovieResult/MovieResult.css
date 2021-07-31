@@ -1,5 +1,5 @@
 .MovieResult-body {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 500;
     cursor: default;
 }
@@ -10,4 +10,18 @@
     background-color: rgba(255, 174, 0, 0.911);
     padding: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.MovieResult-header {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.MovieResult-text {
+    margin-left: 20px;
+    margin-right: 20px;
 }

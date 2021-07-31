@@ -70,7 +70,7 @@ class App extends Component {
             }
           />
           <Route exact path="/logout" render={() => <LogoutPage />} />
-          <Route exact path="/result" render={() => <MovieResultPage />} />
+          <Route exact path="/result" render={() => <MovieResultPage user={this.state.user} />} />
           <Route
             exact
             path="/faves"

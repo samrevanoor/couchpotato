@@ -6,10 +6,20 @@ function MovieResult(props) {
     <div className="MovieResult-body">
       we think you should watch ...
       <div className="MovieResult-result">
-          <span>title: </span><br />
-          <span>genre: </span><br />
-          <span>year: </span><br />
-          <span>plot: </span><br />
+        <img src={props.image} alt="movie poster" width="200px" />
+        <div className="MovieResult-text">
+          <span className="MovieResult-header">title:</span>{" "}
+          <span>{props.title}</span>
+          <br />
+          <span className="MovieResult-header">genre: </span>{" "}
+          <span>{props.genre}</span>
+          <br />
+          <span className="MovieResult-header">year: </span>{" "}
+          <span>{props.year}</span>
+          <br />
+          <span className="MovieResult-header">plot: </span>{" "}
+          <span>{props.plot}</span>
+        </div>
       </div>
     </div>
   );
