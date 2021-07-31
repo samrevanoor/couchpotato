@@ -1,6 +1,10 @@
 import { React, Component } from "react";
 import "../GeneratorForm/GeneratorForm.css";
 
+const currentYear = (new Date()).getFullYear();
+const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+console.log(range(currentYear, currentYear - 50, -1)); 
+
 class GeneratorForm extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +56,7 @@ class GeneratorForm extends Component {
             <div>
               <label>year </label>
               <input
-                type="text"
+                type="number"
                 value={this.state.year}
                 name="year"
                 onChange={this.handleChange}

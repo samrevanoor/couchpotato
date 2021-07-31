@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./LoginPage.css";
 import userService from "../../utils/userService";
+import image from "../SignupPage/couchimage.png";
 
 class LoginPage extends Component {
   state = {
@@ -11,8 +12,8 @@ class LoginPage extends Component {
   };
 
   updateMessage = (msg) => {
-    this.setState({message: msg});
-  }
+    this.setState({ message: msg });
+  };
 
   handleChange = (e) => {
     this.setState({
@@ -34,41 +35,45 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <header className="header-footer">log in</header><br/>
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input
-                type="email"
-                className="form-control"
-                placeholder="email"
-                value={this.state.email}
-                name="email"
-                onChange={this.handleChange}
-              />
+        <div className="LoginPage-text">
+          <header className="header-footer">log in</header>
+          <br />
+          <form className="form-horizontal" onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <div className="col-sm-12">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="email"
+                  value={this.state.email}
+                  name="email"
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input
-                type="password"
-                className="form-control"
-                placeholder="password"
-                value={this.state.pw}
-                name="pw"
-                onChange={this.handleChange}
-              />
+            <div className="form-group">
+              <div className="col-sm-12">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="password"
+                  value={this.state.pw}
+                  name="pw"
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default">log in</button>
-              &nbsp;&nbsp;&nbsp;
-              <Link to="/">cancel</Link>
+            <div className="form-group">
+              <div className="col-sm-12 text-center">
+                <button className="btn btn-default">log in</button>
+                &nbsp;&nbsp;&nbsp;
+                <Link to="/"><button className="btn btn-default">cancel</button></Link>
+              </div>
             </div>
-          </div>
-        </form>
-        <p>{this.state.message}</p>
+          </form>
+          <p>{this.state.message}</p>
+        </div>
+        <img src={image} alt="couch" width="400px"/>
       </div>
     );
   }
