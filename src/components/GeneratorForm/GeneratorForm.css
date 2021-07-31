@@ -16,13 +16,20 @@
   width: 70%;
 }
 
+.GeneratorForm-body select {
+  padding: 6px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 2px inset rgb(118, 118, 118);
+}
+
 .GeneratorForm-body label {
   font-weight: 500;
 }
 
 .GeneratorForm-body input::placeholder {
     font-size: 10px;
-    text-align: center;
 }
 
 .GeneratorForm-button {

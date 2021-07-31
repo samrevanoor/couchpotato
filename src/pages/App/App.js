@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import LogoutPage from "../LogoutPage/LogoutPage";
@@ -63,6 +64,9 @@ class App extends Component {
           <Route exact path="/faves" render={() => <FavesPage />} />
           <Route exact path="/watchlist" render={() => <WatchListPage />} />
         </Switch>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }
