@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import SignupPage from "../SignupPage/SignupPage";
@@ -10,6 +10,7 @@ import WatchListPage from "../WatchListPage/WatchListPage";
 import HomePage from "../HomePage/HomePage";
 import userService from "../../utils/userService";
 import "./App.css";
+import MovieResultPage from "../MovieResultPage/MovieResultPage";
 
 class App extends Component {
   constructor() {
@@ -43,26 +44,51 @@ class App extends Component {
           <Route
             exact
             path="/signup"
-            render={({ history }) => (
-              <SignupPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            )}
+            render={({ history }) =>
+              userService.getUser() ? (
+                <Redirect to="/" />
+              ) : (
+                <SignupPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )
+            }
           />
           <Route
             exact
             path="/login"
-            render={({ history }) => (
-              <LoginPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            )}
+            render={({ history }) =>
+              userService.getUser() ? (
+                <Redirect to="/" />
+              ) : (
+                <LoginPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )
+            }
           />
           <Route exact path="/logout" render={() => <LogoutPage />} />
-          <Route exact path="/faves" render={() => <FavesPage />} />
-          <Route exact path="/watchlist" render={() => <WatchListPage />} />
+          <Route exact path="/result" render={() => <MovieResultPage />} />
+          <Route
+            exact
+            path="/faves"
+            render={() =>
+              userService.getUser() ? <FavesPage /> : <Redirect to="/login" />
+            }
+          />
+          <Route
+            exact
+            path="/watchlist"
+            render={() =>
+              userService.getUser() ? (
+                <WatchListPage />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
         </Switch>
         <footer>
           <Footer />
