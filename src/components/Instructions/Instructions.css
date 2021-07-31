@@ -1,0 +1,10 @@
+.Instructions-body {
+    font-size: 22px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.Instructions-body p {
+    font-size: 16px;
+    margin: 20px 0 30px 0;
+}

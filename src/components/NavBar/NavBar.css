@@ -10,3 +10,7 @@
 .NavBar-title {
     float: left;
 }
+
+.NavBar-image {
+    margin-left: 190px;
+}

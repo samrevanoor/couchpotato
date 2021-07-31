@@ -31,10 +31,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar user={this.state.user} handleLogout={this.handleLogout}/>
+          <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         </header>
         <Switch>
-          <Route exact path="/" render={() => <HomePage />} />
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage user={this.state.user} />}
+          />
           <Route
             exact
             path="/signup"
@@ -55,30 +59,9 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            exact
-            path="/logout"
-            render={() => (
-              <LogoutPage
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/faves"
-            render={() => (
-              <FavesPage
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/watchlist"
-            render={() => (
-              <WatchListPage
-              />
-            )}
-          />
+          <Route exact path="/logout" render={() => <LogoutPage />} />
+          <Route exact path="/faves" render={() => <FavesPage />} />
+          <Route exact path="/watchlist" render={() => <WatchListPage />} />
         </Switch>
       </div>
     );

@@ -1,0 +1,33 @@
+.GeneratorForm-body {
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(255, 174, 0, 0.911);
+  padding: 50px 20px;
+  text-align: left;
+}
+
+.GeneratorForm-body input {
+  font-size: 16px;
+  padding: 8px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.GeneratorForm-body label {
+  font-weight: 500;
+}
+
+.GeneratorForm-body input::placeholder {
+    font-size: 10px;
+    text-align: center;
+}
+
+.GeneratorForm-button {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+}
