@@ -1,8 +1,13 @@
 .WatchListPage-body {
     position: absolute;
-    left: 20%;
-    right: 20%;
-    top: 40%;
+    top: 20%;
+    left: 5%;
+    right: 5%;
     font-size: 20px;
     text-align: center;
-}
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  

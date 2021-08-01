@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../FavesPage/FavesPage.css";
-import { getFaves } from "../../utils/movieDisplay";
+import movieDisplay from "../../utils/movieDisplay";
 import MovieCard from "../../components/MovieCard/MovieCard";
 
 class FavesPage extends Component {
@@ -9,7 +9,7 @@ class FavesPage extends Component {
   };
 
   async componentDidMount() {
-    const result = await getFaves();
+    const result = await movieDisplay.getFaves();
     this.setState({
       faves: result,
     });

@@ -30,10 +30,16 @@ class MovieResultPage extends Component {
   }
 
   handleAddToFaves = async (e) => {
-    e.preventDefault();
     try {
-      await saveMovies.addMovie(this.state);
-      this.props.match.params.push("/faves");
+      await saveMovies.addMovieToFaves(this.state);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  handleAddToWatchList = async (e) => {
+    try {
+      await saveMovies.addMovieToWatchlist(this.state);
     } catch (err) {
       console.log(err);
     }
@@ -59,8 +65,11 @@ class MovieResultPage extends Component {
           <p>
             {/* TO DO */}
             <Link to="/">back</Link>&nbsp; | &nbsp;
-            <Link to="/faves" onClick={(e)=>this.handleAddToFaves(e)}>add to faves</Link>&nbsp; | &nbsp;
-            <Link to="/watchlist">add to watch list</Link>&nbsp; | &nbsp;
+            <Link to="/faves" onClick={(e) => this.handleAddToFaves(e)}>
+              add to faves
+            </Link>
+            &nbsp; | &nbsp;
+            <Link to="/watchlist" onClick={(e) => this.handleAddToWatchList(e)}>add to watch list</Link>&nbsp; | &nbsp;
             <Link to="/result">regenerate!</Link>
           </p>
         )}

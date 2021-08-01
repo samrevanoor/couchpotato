@@ -8,6 +8,7 @@ const movieSchema = new Schema(
     plot: String,
     image: String,
     imdbID: String,
+    list: String,
     user: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
