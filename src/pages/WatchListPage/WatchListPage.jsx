@@ -13,7 +13,6 @@ class WatchListPage extends Component {
     this.setState({
       watchlist: result,
     });
-    console.log(this.state);
   }
 
   render() {
@@ -30,7 +29,7 @@ class WatchListPage extends Component {
         <div className="WatchListPage-body">
           {watchlist.map((watch, index) => {
             return (
-              <div key={index}>
+              <div key={watch.tmdbId}>
                 <MovieCard
                   title={watch.title}
                   image={watch.image}

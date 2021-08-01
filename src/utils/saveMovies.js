@@ -8,7 +8,6 @@ function addMovieToFaves(movie) {
     body: JSON.stringify(movie),
   })
     .then((res) => {
-      console.log("Response:", res);
       if (res.ok) return res.json();
       throw new Error("can't save movie");
     })
@@ -24,7 +23,6 @@ function addMovieToWatchlist(movie) {
     body: JSON.stringify(movie),
   })
     .then((res) => {
-      console.log("Response:", res);
       if (res.ok) return res.json();
       throw new Error("can't save movie");
     })

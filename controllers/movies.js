@@ -7,7 +7,6 @@ async function createFave(req, res, next) {
   const movie = new Movie(req.body);
   try {
     await movie.save();
-    console.log("Movie", movie);
     res.json(movie);
   } catch (err) {
     console.log("Error", err);
@@ -21,7 +20,6 @@ async function createWatchlist(req, res, next) {
   const movie = new Movie(req.body);
   try {
     await movie.save();
-    console.log("Movie", movie);
     res.json(movie);
   } catch (err) {
     console.log("Error", err);
@@ -31,7 +29,6 @@ async function createWatchlist(req, res, next) {
 function favesIndex(req, res, next) {
   Movie.find({ list: "faves" })
     .then(function (movies) {
-      console.log("Index", movies);
       res.json(movies);
     })
     .catch(function (err) {
@@ -43,7 +40,6 @@ function favesIndex(req, res, next) {
 function watchlistIndex(req, res, next) {
   Movie.find({ list: "watchlist" })
     .then(function (movies) {
-      console.log("Index", movies);
       res.json(movies);
     })
     .catch(function (err) {

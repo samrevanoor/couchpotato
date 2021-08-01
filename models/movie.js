@@ -7,7 +7,7 @@ const movieSchema = new Schema(
     year: Number,
     plot: String,
     image: String,
-    imdbID: String,
+    tmdbId: String,
     list: String,
     user: { type: Schema.Types.ObjectId, ref: "User" },
   },

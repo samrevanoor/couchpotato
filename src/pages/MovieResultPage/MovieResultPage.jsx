@@ -26,7 +26,6 @@ class MovieResultPage extends Component {
       image: `${BASE_URL}${result.poster_path}`,
       tmdbId: result.id,
     });
-    console.log(this.state);
   }
 
   handleAddToFaves = async (e) => {
@@ -46,7 +45,7 @@ class MovieResultPage extends Component {
   };
 
   render() {
-    const { title, genre, year, plot, image } = this.state;
+    const { title, genre, year, plot, image, tmdbId } = this.state;
     return (
       <div className="MovieResultPage-body">
         <MovieResult
@@ -55,6 +54,7 @@ class MovieResultPage extends Component {
           year={year}
           plot={plot}
           image={image}
+          tmdbId={tmdbId}
         />
         {!this.props.user ? (
           <p>

@@ -27,6 +27,10 @@ class GeneratorForm extends Component {
     });
   };
 
+  isFormInvalid() {
+    return !(this.state.startYear < this.state.endYear);
+  }
+
   //   handleSubmit = async (e) => {
   //     e.preventDefault();
   //     try {
@@ -94,7 +98,10 @@ class GeneratorForm extends Component {
             </div>
           </div>
           <div>
-            <button className="btn btn-default GeneratorForm-button">
+            <button
+              className="btn btn-default GeneratorForm-button"
+              disabled={this.isFormInvalid()}
+            >
               generate!
             </button>
             &nbsp;&nbsp;

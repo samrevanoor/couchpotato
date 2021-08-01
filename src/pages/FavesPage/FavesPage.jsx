@@ -13,7 +13,6 @@ class FavesPage extends Component {
     this.setState({
       faves: result,
     });
-    console.log(this.state);
   }
 
   render() {
@@ -30,7 +29,7 @@ class FavesPage extends Component {
         <div className="FavesPage-body">
           {faves.map((fave, index) => {
             return (
-              <div key={index}>
+              <div key={fave.tmdbId}>
                 <MovieCard
                   title={fave.title}
                   image={fave.image}

@@ -4,14 +4,12 @@ const BASE_URL = "/api/movies/";
 async function getFaves() {
   const response = await fetch(BASE_URL + "faves");
   const result = await response.json();
-  console.log("faves result", result);
   return result;
 }
 
 async function getWatchlist() {
   const response = await fetch(BASE_URL + "watchlist");
   const result = await response.json();
-  console.log("watchlist result", result);
   return result;
 }
 
