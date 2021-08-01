@@ -7,7 +7,8 @@ class GeneratorForm extends Component {
     super(props);
     this.state = {
       genre: "",
-      year: "",
+      startYear: "",
+      endYear: "",
       performers: [],
       director: "",
     };
@@ -20,10 +21,7 @@ class GeneratorForm extends Component {
   };
 
   handlePerformersChange = (e) => {
-    let performerArray = e.target.value
-      .trim()
-      .replace(/\s*,\s*/g, ",")
-      .split(",");
+    let performerArray = e.target.value.replace(/\s*,\s*/g, ",").split(",");
     this.setState({
       performers: performerArray,
     });
@@ -44,8 +42,8 @@ class GeneratorForm extends Component {
     return (
       <div className="GeneratorForm-body">
         <form>
-          {/* onSubmit={this.handleSubmit}> */}
-          <div>
+          <div className="GeneratorForm-form">
+            {/* onSubmit={this.handleSubmit}> */}
             <div>
               <label>genre </label>
               <select name="genre" onChange={(e) => this.handleChange(e)}>
@@ -59,26 +57,22 @@ class GeneratorForm extends Component {
                 <option value="documentary">documentary</option>
               </select>
             </div>
-          </div>
-          <div>
             <div>
               <label>year </label>
-              <select name="year" onChange={(e) => this.handleChange(e)}>
+              <select name="startYear" onChange={(e) => this.handleChange(e)}>
                 <option key="emptyStart" value=""></option>
                 {yearRange()}
               </select>
               &nbsp;
               <label>to</label>
-              <select name="year" onChange={(e) => this.handleChange(e)}>
-                <option key="emptyStop" value=""></option>
+              <select name="endYear" onChange={(e) => this.handleChange(e)}>
+                <option key="emptyEnd" value=""></option>
                 {yearRange()}
               </select>
               <span className="GeneratorForm-instruction">
                 leave blank if you don't mind any year
               </span>
             </div>
-          </div>
-          <div>
             <div>
               <label>performers </label>
               <input
@@ -89,8 +83,6 @@ class GeneratorForm extends Component {
                 onChange={(e) => this.handlePerformersChange(e)}
               />
             </div>
-          </div>
-          <div>
             <div>
               <label>director </label>
               <input
@@ -102,13 +94,10 @@ class GeneratorForm extends Component {
             </div>
           </div>
           <div>
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default GeneratorForm-button">
-                {" "}
-                generate!
-              </button>
-              &nbsp;&nbsp;
-            </div>
+            <button className="btn btn-default GeneratorForm-button">
+              generate!
+            </button>
+            &nbsp;&nbsp;
           </div>
         </form>
       </div>

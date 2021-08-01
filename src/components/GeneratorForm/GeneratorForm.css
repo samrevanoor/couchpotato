@@ -1,5 +1,5 @@
-.GeneratorForm-body {
-  font-size: 20px;
+.GeneratorForm-form {
+  font-size: 16px;
   border: 2px solid black;
   border-radius: 20px;
   background-color: rgba(255, 174, 0, 0.911);
@@ -36,9 +36,11 @@
 
 .GeneratorForm-button {
   border: 2px solid black;
-  background-color: white;
   color: black;
   font-weight: 500;
+  padding: 10px 20px;
+  background-color: rgba(255, 174, 0, 0.911);
+  text-align: center;
 }
 
 .GeneratorForm-instruction {

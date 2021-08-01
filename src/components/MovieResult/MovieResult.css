@@ -25,3 +25,11 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.MovieResult-footer {
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    font-family: 'Gaegu', cursive;
+}

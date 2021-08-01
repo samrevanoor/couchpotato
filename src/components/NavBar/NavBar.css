@@ -1,6 +1,7 @@
 .NavBar-header {
     margin: 30px;
     font-size: 20px;
+    font-family: 'Gaegu', cursive;
 }
 
 .NavBar-links {
@@ -12,5 +13,5 @@
 }
 
 .NavBar-image {
-    margin-left: 190px;
+    margin-left: 120px;
 }

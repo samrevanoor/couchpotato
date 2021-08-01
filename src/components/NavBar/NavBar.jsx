@@ -13,7 +13,7 @@ function NavBar(props) {
           <img src={gif} alt="" width="100px" />
         </a>
         <br />
-        <Link to="/">couch potato</Link>
+        &nbsp;<Link to="/">couch potato</Link>
       </span>
       <span className="NavBar-links">
         <a href="/" className="NavBar-image">

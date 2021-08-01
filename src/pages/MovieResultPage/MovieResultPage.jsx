@@ -10,7 +10,8 @@ class MovieResultPage extends Component {
     genre: "",
     year: "",
     plot: "",
-    image: ""
+    image: "",
+    id: ""
   };
 
   async componentDidMount() {
@@ -21,7 +22,8 @@ class MovieResultPage extends Component {
         genre: result.genres[0].name,
         year: result.release_date.substr(0,4),
         plot: result.overview,
-        image: `${BASE_URL}${result.poster_path}`
+        image: `${BASE_URL}${result.poster_path}`,
+        id: result.id
       });
     console.log(this.state);
   }

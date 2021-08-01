@@ -2,6 +2,8 @@ import React from "react";
 import "../MovieResult/MovieResult.css";
 
 function MovieResult(props) {
+  let trailer = `https://www.youtube.com/results?search_query=${props.title}+trailer`;
+
   return (
     <div className="MovieResult-body">
       we think you should watch ...
@@ -19,6 +21,9 @@ function MovieResult(props) {
           <br />
           <span className="MovieResult-header">plot: </span>{" "}
           <span>{props.plot}</span>
+          <div className="MovieResult-footer">
+            <a href={trailer} rel="noreferrer" target="_blank">watch the trailer</a>
+          </div>
         </div>
       </div>
     </div>
