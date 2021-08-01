@@ -1,35 +1,19 @@
 .MovieCard-body {
-    font-size: 16px;
-    font-weight: 500;
-    cursor: default;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  background-color: rgba(255, 174, 0, 0.911);
+  margin: 20px;
+  padding: 20px;
+  align-items: center;
+  width: 300px;
+  height: 400px;
 }
 
-.MovieCard-result {
-    margin: 20px 0;
-    border: 2px solid black;
-    background-color: rgba(255, 174, 0, 0.911);
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.MovieCard-header {
-    font-size: 16px;
-    /* text-transform: uppercase; */
+.MovieCard-title {
     font-weight: 700;
-}
-
-.MovieCard-text {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.MovieCard-footer {
-    font-size: 18px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 30px;
-    font-family: 'Gaegu', cursive;
+    font-size: 16px;
 }

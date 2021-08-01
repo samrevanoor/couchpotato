@@ -20,23 +20,18 @@ class FavesPage extends Component {
     const { faves } = this.state;
     return (
       <div className="FavesPage-body">
-        my faves
-        <div>
-          <div>
-            {faves.map((fave, index) => {
-              return (
-                <div key={index}>
-                  <MovieCard
-                    title={fave.title}
-                    image={fave.image}
-                    genre={fave.genre}
-                    year={fave.year}
-                  />
-                </div>
-              );
-            })}
-          </div>{" "}
-        </div>
+        {faves.map((fave, index) => {
+          return (
+            <div key={index}>
+              <MovieCard
+                title={fave.title}
+                image={fave.image}
+                genre={fave.genre}
+                year={fave.year}
+              />
+            </div>
+          );
+        })}
       </div>
     );
   }
