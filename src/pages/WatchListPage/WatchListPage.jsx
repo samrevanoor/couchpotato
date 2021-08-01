@@ -11,29 +11,39 @@ class WatchListPage extends Component {
   async componentDidMount() {
     const result = await movieDisplay.getWatchlist();
     this.setState({
-        watchlist: result,
+      watchlist: result,
     });
     console.log(this.state);
   }
 
   render() {
     const { watchlist } = this.state;
-    return (
-      <div className="WatchListPage-body">
-        {watchlist.map((watch, index) => {
-          return (
-            <div key={index}>
-              <MovieCard
-                title={watch.title}
-                image={watch.image}
-                genre={watch.genre}
-                year={watch.year}
-              />
-            </div>
-          );
-        })}
-      </div>
-    );
+    let display;
+    if (!watchlist.length) {
+      display = (
+        <div className="WatchListPage-nomovies">
+          you don't have any movies in your watch list yet!
+        </div>
+      );
+    } else {
+      display = (
+        <div className="WatchListPage-body">
+          {watchlist.map((watch, index) => {
+            return (
+              <div key={index}>
+                <MovieCard
+                  title={watch.title}
+                  image={watch.image}
+                  genre={watch.genre}
+                  year={watch.year}
+                />
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+    return <div className="WatchListPage-body">{display}</div>;
   }
 }
 

@@ -10,3 +10,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.FavesPage-nomovies {
+  margin: 200px;
+}

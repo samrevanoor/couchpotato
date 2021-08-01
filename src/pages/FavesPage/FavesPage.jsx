@@ -18,22 +18,32 @@ class FavesPage extends Component {
 
   render() {
     const { faves } = this.state;
-    return (
-      <div className="FavesPage-body">
-        {faves.map((fave, index) => {
-          return (
-            <div key={index}>
-              <MovieCard
-                title={fave.title}
-                image={fave.image}
-                genre={fave.genre}
-                year={fave.year}
-              />
-            </div>
-          );
-        })}
-      </div>
-    );
+    let display;
+    if (!faves.length) {
+      display = (
+        <div className="FavesPage-nomovies">
+          you don't have any favourites yet!
+        </div>
+      );
+    } else {
+      display = (
+        <div className="FavesPage-body">
+          {faves.map((fave, index) => {
+            return (
+              <div key={index}>
+                <MovieCard
+                  title={fave.title}
+                  image={fave.image}
+                  genre={fave.genre}
+                  year={fave.year}
+                />
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+    return <div className="FavesPage-body">{display}</div>;
   }
 }
 

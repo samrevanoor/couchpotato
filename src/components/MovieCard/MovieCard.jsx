@@ -7,7 +7,7 @@ function MovieCard(props) {
     <div className="MovieCard-body">
       <img src={image} alt="movie poster" height="300px" />
       <span className="MovieCard-title">{title}, {year}</span>
-      <span>{genre}</span>
+      <span>{genre.join(", ")}</span>
     </div>
   );
 }
