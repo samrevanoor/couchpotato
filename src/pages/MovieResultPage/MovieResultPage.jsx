@@ -33,7 +33,7 @@ class MovieResultPage extends Component {
     e.preventDefault();
     try {
       await saveMovies.addMovie(this.state);
-      // this.props.history.push("/faves");
+      this.props.match.params.push("/faves");
     } catch (err) {
       console.log(err);
     }
