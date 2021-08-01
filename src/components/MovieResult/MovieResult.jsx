@@ -10,16 +10,16 @@ function MovieResult(props) {
       <div className="MovieResult-result">
         <img src={props.image} alt="movie poster" width="200px" />
         <div className="MovieResult-text">
-          <span className="MovieResult-header">title:</span>{" "}
+          <span className="MovieResult-header">TITLE:</span>{" "}
           <span>{props.title}</span>
           <br />
-          <span className="MovieResult-header">genre: </span>{" "}
+          <span className="MovieResult-header">GENRE(s): </span>{" "}
           <span>{props.genre}</span>
           <br />
-          <span className="MovieResult-header">year: </span>{" "}
+          <span className="MovieResult-header">YEAR: </span>{" "}
           <span>{props.year}</span>
           <br />
-          <span className="MovieResult-header">plot: </span>{" "}
+          <span className="MovieResult-header">PLOT: </span>{" "}
           <span>{props.plot}</span>
           <div className="MovieResult-footer">
             <a href={trailer} rel="noreferrer" target="_blank">watch the trailer</a>

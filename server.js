@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'production'){
 
 // API routes
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/movies', require('./routes/api/movies'));
 app.use(require('./config/auth'));
 
 // Catch-all
