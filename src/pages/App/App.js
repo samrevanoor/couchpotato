@@ -101,15 +101,19 @@ class App extends Component {
           <Route
             exact
             path="/result"
-            render={(props) => (
-              <MovieResultPage
-                {...props}
-                user={this.state.user}
-                genre={this.state.genre}
-                startYear={this.state.startYear}
-                endYear={this.state.endYear}
-              />
-            )}
+            render={(props) =>
+              this.state.genre ? (
+                <MovieResultPage
+                  {...props}
+                  user={this.state.user}
+                  genre={this.state.genre}
+                  startYear={this.state.startYear}
+                  endYear={this.state.endYear}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             exact

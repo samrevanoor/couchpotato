@@ -2,8 +2,8 @@ const Movie = require("../models/movie");
 
 async function createFave(req, res, next) {
   req.body.list = "faves";
-  // const genres = req.body.genre.replace(/\s*,\s*/g, ",").split(",");
-  // req.body.genre = genres;
+  const genres = req.body.genreList.replace(/\s*,\s*/g, ",").split(",");
+  req.body.genreList = genres;
   const movie = new Movie(req.body);
   try {
     await movie.save();
@@ -15,8 +15,8 @@ async function createFave(req, res, next) {
 
 async function createWatchlist(req, res, next) {
   req.body.list = "watchlist";
-  const genres = req.body.genre.replace(/\s*,\s*/g, ",").split(",");
-  req.body.genre = genres;
+  const genres = req.body.genreList.replace(/\s*,\s*/g, ",").split(",");
+  req.body.genreList = genres;
   const movie = new Movie(req.body);
   try {
     await movie.save();
