@@ -13,7 +13,7 @@ class MovieCard extends Component {
 
   shortenGenres(genre) {
     if (genre.length > 3) {
-      const shortGenreList = [`${genre[0]}, ${genre[1]}, ${genre[2]} +`]
+      const shortGenreList = [`${genre[0]}, ${genre[1]}, ${genre[2]} +`];
       return shortGenreList;
     } else {
       return genre
@@ -24,7 +24,7 @@ class MovieCard extends Component {
     const { image, title, genre, year } = this.props;
     return (
       <div className="MovieCard-body">
-        <img src={image} alt="movie poster" height="300px" />
+        <img src={image} alt="movie poster" height="280px" />
         <span className="MovieCard-title">
           {this.shortenTitles(title)}, {year}
         </span>

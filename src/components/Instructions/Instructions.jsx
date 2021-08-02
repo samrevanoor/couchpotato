@@ -6,7 +6,7 @@ function Instructions(props) {
     <div className="Instructions-body">
       hey, are you looking for something to watch?
       <p>
-        fill out one or more of the following fields and we’ll get you on the
+        fill out the following fields and we’ll get you on the
         couch in no time!
       </p>
     </div>

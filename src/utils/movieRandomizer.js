@@ -20,20 +20,6 @@ export async function search(query) {
     const oneMovie = result2.results[randomMovie()];
     console.log("Result", oneMovie);
     return oneMovie;
-  // } else if (!query.genre && !query.startYear && !query.endYear) {
-  //   const response1 = await fetch(
-  //     `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=1`
-  //   );
-  //   const result1 = await response1.json();
-  //   const totalPages = result1.total_pages;
-  //   const page = randomPage(totalPages);
-  //   const response2 = await fetch(
-  //     `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=${page}`
-  //   );
-  //   const result2 = await response2.json();
-  //   const oneMovie = result2.results[randomMovie()];
-  //   console.log("Result", oneMovie);
-  //   return oneMovie;
   } else {
     const response1 = await fetch(
       `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=1&with_genres=${query.genre}`

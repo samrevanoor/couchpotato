@@ -1,24 +1,30 @@
 import { React, Component } from "react";
 import "../GeneratorForm/GeneratorForm.css";
 import yearRange from "../../utils/yearArray";
-// import { search } from "../../utils/randomizer"
 
 class GeneratorForm extends Component {
-
   isFormInvalid() {
     if (this.props.startYear && this.props.endYear) {
+      if (!this.props.genre) {
+        return true;
+      }
       return this.props.startYear > this.props.endYear;
+    } else {
+      return !this.props.genre;
     }
   }
 
   render() {
     return (
       <div className="GeneratorForm-body">
-        <form onSubmit={(e)=>this.props.handleGeneratorFormSubmit(e)}>
+        <form onSubmit={(e) => this.props.handleGeneratorFormSubmit(e)}>
           <div className="GeneratorForm-form">
             <div>
               <label>genre </label>
-              <select name="genre" onChange={(e) => this.props.handleGeneratorFormChange(e)}>
+              <select
+                name="genre"
+                onChange={(e) => this.props.handleGeneratorFormChange(e)}
+              >
                 <option key="emptyGenre" value=""></option>
                 <option value="28">action</option>
                 <option value="12">adventure</option>
@@ -43,13 +49,19 @@ class GeneratorForm extends Component {
             </div>
             <div>
               <label>year </label>
-              <select name="startYear" onChange={(e) => this.props.handleGeneratorFormChange(e)}>
+              <select
+                name="startYear"
+                onChange={(e) => this.props.handleGeneratorFormChange(e)}
+              >
                 <option key="emptyStart" value=""></option>
                 {yearRange()}
               </select>
               &nbsp;
               <label>to</label>
-              <select name="endYear" onChange={(e) => this.props.handleGeneratorFormChange(e)}>
+              <select
+                name="endYear"
+                onChange={(e) => this.props.handleGeneratorFormChange(e)}
+              >
                 <option key="emptyEnd" value="2021"></option>
                 {yearRange()}
               </select>

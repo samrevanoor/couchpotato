@@ -48,9 +48,20 @@ function watchlistIndex(req, res, next) {
     });
 }
 
+function showMovie(req, res) {
+  Movie.findById(req.params.id)
+    .then(function (movie) {
+      res.json(movie);
+    })
+    .catch(function (err) {
+      console.log("whoops");
+    });
+}
+
 module.exports = {
   createFave,
   createWatchlist,
   favesIndex,
   watchlistIndex,
+  showMovie
 };
