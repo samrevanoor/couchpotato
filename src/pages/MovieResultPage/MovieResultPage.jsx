@@ -8,7 +8,7 @@ import saveMovies from "../../utils/saveMovies";
 class MovieResultPage extends Component {
   state = {
     title: "",
-    genre: "",
+    genreList: "",
     year: "",
     plot: "",
     image: "",
@@ -16,11 +16,12 @@ class MovieResultPage extends Component {
   };
 
   async componentDidMount() {
-    const result = await search();
+    const result = await search(this.props);
     const BASE_URL = "https://image.tmdb.org/t/p/w500";
     this.setState({
       title: result.title,
-      genre: result.genres.map((genre) => genre.name).join(", "),
+      genreList: result.genre_ids,
+      // .map((genre) => genre.name).join(", "),
       year: result.release_date.substr(0, 4),
       plot: result.overview,
       image: `${BASE_URL}${result.poster_path}`,
@@ -45,12 +46,12 @@ class MovieResultPage extends Component {
   };
 
   render() {
-    const { title, genre, year, plot, image, tmdbId } = this.state;
+    const { title, genreList, year, plot, image, tmdbId } = this.state;
     return (
       <div className="MovieResultPage-body">
         <MovieResult
           title={title}
-          genre={genre}
+          genre={genreList}
           year={year}
           plot={plot}
           image={image}

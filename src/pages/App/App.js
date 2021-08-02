@@ -16,6 +16,9 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
+      genre: "",
+      startYear: "",
+      endYear: "",
     };
   }
 
@@ -28,6 +31,22 @@ class App extends Component {
     this.setState({ user: null });
   };
 
+  handleGeneratorFormChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleGeneratorFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(this.state);
+      this.props.history.push("/result");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -38,7 +57,17 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <HomePage user={this.state.user} />}
+            render={(props) => (
+              <HomePage
+                {...props}
+                user={this.state.user}
+                genre={this.state.genre}
+                startYear={this.state.startYear}
+                endYear={this.state.endYear}
+                handleGeneratorFormSubmit={this.handleGeneratorFormSubmit}
+                handleGeneratorFormChange={this.handleGeneratorFormChange}
+              />
+            )}
           />
           <Route
             exact
@@ -69,7 +98,19 @@ class App extends Component {
             }
           />
           <Route exact path="/logout" render={() => <LogoutPage />} />
-          <Route exact path="/result" render={() => <MovieResultPage user={this.state.user} />} />
+          <Route
+            exact
+            path="/result"
+            render={(props) => (
+              <MovieResultPage
+                {...props}
+                user={this.state.user}
+                genre={this.state.genre}
+                startYear={this.state.startYear}
+                endYear={this.state.endYear}
+              />
+            )}
+          />
           <Route
             exact
             path="/faves"

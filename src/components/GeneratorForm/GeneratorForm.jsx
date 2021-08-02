@@ -1,83 +1,97 @@
 import { React, Component } from "react";
 import "../GeneratorForm/GeneratorForm.css";
 import yearRange from "../../utils/yearArray";
+// import { search } from "../../utils/randomizer"
 
 class GeneratorForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      genre: "",
-      startYear: "",
-      endYear: "",
-      performers: [],
-      director: "",
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     genre: "",
+  //     startYear: "",
+  //     endYear: "",
+  //     // performers: [],
+  //     // director: "",
+  //   };
+  // }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
+  // handleChange = (e) => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
-  handlePerformersChange = (e) => {
-    let performerArray = e.target.value.replace(/\s*,\s*/g, ",").split(",");
-    this.setState({
-      performers: performerArray,
-    });
-  };
+  // handlePerformersChange = (e) => {
+  //   let performerArray = e.target.value.replace(/\s*,\s*/g, ",").split(",");
+  //   this.setState({
+  //     performers: performerArray,
+  //   });
+  // };
 
   isFormInvalid() {
-    return !(this.state.startYear < this.state.endYear);
+    if (this.props.startYear && this.props.endYear) {
+      return this.props.startYear > this.props.endYear;
+    }
   }
 
-  //   handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       await userService.signup(this.state);
-  //       this.props.handleSignupOrLogin();
-  //       this.props.history.push('/');
-  //     } catch (err) {
-  //       this.props.updateMessage(err.message);
-  //     }
+  // handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     console.log(this.state);
+  //     await search(this.state);
+  //     this.props.history.push("/result")
+  //   } catch (err) {
+  //     console.log(err);
   //   }
+  // };
 
   render() {
     return (
       <div className="GeneratorForm-body">
-        <form>
+        <form onSubmit={(e)=>this.props.handleGeneratorFormSubmit(e)}>
           <div className="GeneratorForm-form">
-            {/* onSubmit={this.handleSubmit}> */}
             <div>
               <label>genre </label>
-              <select name="genre" onChange={(e) => this.handleChange(e)}>
+              <select name="genre" onChange={(e) => this.props.handleGeneratorFormChange(e)}>
                 <option key="emptyGenre" value=""></option>
-                <option value="comedy">comedy</option>
-                <option value="romance">romance</option>
-                <option value="drama">drama</option>
-                <option value="action">action</option>
-                <option value="fantasy">fantasy</option>
-                <option value="horror">horror</option>
-                <option value="documentary">documentary</option>
+                <option value="28">action</option>
+                <option value="12">adventure</option>
+                <option value="16">animation</option>
+                <option value="35">comedy</option>
+                <option value="80">crime</option>
+                <option value="99">documentary</option>
+                <option value="18">drama</option>
+                <option value="10751">family</option>
+                <option value="14">fantasy</option>
+                <option value="36">history</option>
+                <option value="27">horror</option>
+                <option value="10402">music</option>
+                <option value="9648">mystery</option>
+                <option value="10749">romance</option>
+                <option value="878">science fiction</option>
+                <option value="53">thriller</option>
+                <option value="10770">tv movie</option>
+                <option value="10752">war</option>
+                <option value="37">western</option>
               </select>
             </div>
             <div>
               <label>year </label>
-              <select name="startYear" onChange={(e) => this.handleChange(e)}>
+              <select name="startYear" onChange={(e) => this.props.handleGeneratorFormChange(e)}>
                 <option key="emptyStart" value=""></option>
                 {yearRange()}
               </select>
               &nbsp;
               <label>to</label>
-              <select name="endYear" onChange={(e) => this.handleChange(e)}>
-                <option key="emptyEnd" value=""></option>
+              <select name="endYear" onChange={(e) => this.props.handleGeneratorFormChange(e)}>
+                <option key="emptyEnd" value="2021"></option>
                 {yearRange()}
               </select>
               <span className="GeneratorForm-instruction">
                 leave blank if you don't mind any year
               </span>
             </div>
-            <div>
+            {/* <div>
               <label>performers </label>
               <input
                 type="text"
@@ -95,7 +109,7 @@ class GeneratorForm extends Component {
                 name="director"
                 onChange={(e) => this.handleChange(e)}
               />
-            </div>
+            </div> */}
           </div>
           <div>
             <button
