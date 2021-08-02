@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../MovieResultPage/MovieResultPage.css";
 import MovieResult from "../../components/MovieResult/MovieResult";
 import { search } from "../../utils/movieRandomizer";
-import getGenreName from "../../utils/getGenre"
+// import getGenreName from "../../utils/getGenre"
 import saveMovies from "../../utils/saveMovies";
 import loading from "./loading.gif"
 
@@ -15,6 +15,7 @@ class MovieResultPage extends Component {
     plot: "",
     image: "",
     tmdbId: "",
+    imdb: "",
     movie: false,
   };
 
@@ -24,11 +25,12 @@ class MovieResultPage extends Component {
       const BASE_URL = "https://image.tmdb.org/t/p/w500";
       this.setState({
         title: result.title,
-        genreList: result.genre_ids.map((genre) => getGenreName(genre)).join(", "),
+        genreList: result.genres.map((genre) => genre.name).join(", "),
         year: result.release_date.substr(0, 4),
         plot: result.overview,
         image: `${BASE_URL}${result.poster_path}`,
         tmdbId: result.id,
+        imdb: result.imdb_id,
         movie: true,
       });
     } else {
@@ -53,7 +55,7 @@ class MovieResultPage extends Component {
   };
 
   render() {
-    const { title, genreList, year, plot, image, tmdbId, movie } = this.state;
+    const { title, genreList, year, plot, image, tmdbId, imdb, movie } = this.state;
     let display;
     if (!movie) {
       display = <div className="MovieResultPage-body">
@@ -69,6 +71,7 @@ class MovieResultPage extends Component {
             plot={plot}
             image={image}
             tmdbId={tmdbId}
+            imdb={imdb}
           />
           {!this.props.user ? (
             <p>

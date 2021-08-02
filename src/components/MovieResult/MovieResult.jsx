@@ -2,7 +2,7 @@ import React from "react";
 import "../MovieResult/MovieResult.css";
 
 function MovieResult(props) {
-  let trailer = `https://www.youtube.com/results?search_query=${props.title}+trailer`;
+  let trailer = `https://www.youtube.com/results?search_query=${props.title}+${props.year}+trailer`;
 
   return (
     <div className="MovieResult-body">

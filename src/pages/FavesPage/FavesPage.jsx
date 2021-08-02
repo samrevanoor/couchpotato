@@ -30,12 +30,15 @@ class FavesPage extends Component {
           {faves.map((fave, index) => {
             return (
               <div key={fave.tmdbId}>
-                <MovieCard
-                  title={fave.title}
-                  image={fave.image}
-                  genre={fave.genreList}
-                  year={fave.year}
-                />
+                  <MovieCard
+                    title={fave.title}
+                    image={fave.image}
+                    genre={fave.genreList}
+                    year={fave.year}
+                    plot={fave.plot}
+                    tmdbId={fave.tmdbId}
+                    imdb={fave.imdb}
+                  />
               </div>
             );
           })}

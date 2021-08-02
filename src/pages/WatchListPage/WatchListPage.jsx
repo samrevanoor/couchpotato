@@ -31,10 +31,12 @@ class WatchListPage extends Component {
             return (
               <div key={watch.tmdbId}>
                 <MovieCard
-                  title={watch.title}
-                  image={watch.image}
-                  genre={watch.genreList}
-                  year={watch.year}
+                    title={watch.title}
+                    image={watch.image}
+                    genre={watch.genreList}
+                    year={watch.year}
+                    plot={watch.plot}
+                    tmdbId={watch.tmdbId}
                 />
               </div>
             );

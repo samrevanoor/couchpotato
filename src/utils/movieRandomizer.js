@@ -17,9 +17,13 @@ export async function search(query) {
       `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=${page}&release_date.gte=${startYear}&release_date.lte=${endYear}&with_genres=${query.genre}`
     );
     const result2 = await response2.json();
-    const oneMovie = result2.results[randomMovie()];
-    console.log("Result", oneMovie);
-    return oneMovie;
+    const response3 = result2.results[randomMovie()].id;
+    const result3 = await fetch(
+      `${BASE_URL}movie/${response3}?api_key=${API_KEY}`
+    );
+    const movie = await result3.json();
+    console.log("Result", movie);
+    return movie;
   } else {
     const response1 = await fetch(
       `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=1&with_genres=${query.genre}`
@@ -31,9 +35,13 @@ export async function search(query) {
       `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=${page}&with_genres=${query.genre}`
     );
     const result2 = await response2.json();
-    const oneMovie = result2.results[randomMovie()];
-    console.log("Result", oneMovie);
-    return oneMovie;
+    const response3 = result2.results[randomMovie()].id;
+    const result3 = await fetch(
+      `${BASE_URL}movie/${response3}?api_key=${API_KEY}`
+    );
+    const movie = await result3.json();
+    console.log("Result", movie);
+    return movie;
   }
 }
 
