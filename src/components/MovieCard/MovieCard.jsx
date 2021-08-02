@@ -39,6 +39,7 @@ class MovieCard extends Component {
   render() {
     const { image, title, genre, year, plot, imdb, id } = this.props;
     const { showPlot } = this.state;
+    let altText = `movie poster for ${title}`;
     let imdbLink = `https://www.imdb.com/title/${imdb}/?ref_=fn_al_tt_1`;
     let display;
     if (showPlot) {
@@ -90,7 +91,7 @@ class MovieCard extends Component {
     } else {
       display = (
         <div className="MovieCard-body">
-          <img src={image} alt="movie poster" height="300px" /> <br />
+          <img src={image} alt={altText} height="300px" /> <br />
           <button onClick={this.handleShowPlot}>see more</button>
         </div>
       );

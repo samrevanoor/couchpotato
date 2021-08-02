@@ -8,6 +8,7 @@ async function deleteMovieFromFaves(movie) {
   const result = await res.json();
   return result;
 }
+
 async function deleteMovieFromWatchlist(movie) {
   const res = await fetch(`${BASE_URL}watchlist/${movie}?_method=DELETE`, {
     method: "POST",

@@ -19,7 +19,7 @@ class WatchListPage extends Component {
   handleDeleteButtonClick = async (id) => {
     const result = await movieUpdate.deleteMovieFromWatchlist(id);
     this.setState({
-      watchlist: [...this.state.watchlist, result],
+      watchlist: result[0],
     });
   };
 

@@ -16,17 +16,10 @@ class FavesPage extends Component {
     });
   }
 
-  // async componentDidUpdate(){
-  //   const result = await movieDisplay.getFaves();
-  //   this.setState({
-  //     faves: result,
-  //   });
-  // }
-
   handleDeleteButtonClick = async (id) => {
     const result = await movieUpdate.deleteMovieFromFaves(id);
     this.setState({
-      faves: [...this.state.faves, result],
+      faves: result[0],
     });
   };
 
