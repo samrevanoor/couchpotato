@@ -24,8 +24,8 @@ class MovieCard extends Component {
   }
 
   shortenPlot(plot) {
-    if (plot.length > 430) {
-      return `${plot.substr(0, 430)} ...`;
+    if (plot.length > 350) {
+      return `${plot.substr(0, 350)} ...`;
     } else {
       return plot;
     }
@@ -52,7 +52,7 @@ class MovieCard extends Component {
               <span className="MovieCard-genre">
                 {this.shortenGenres(genre).join(", ")}
               </span>
-              {plot}
+              {this.shortenPlot(plot)}
               <br /> <br />
               <button onClick={this.handleShowPlot}>see less</button>
             </div>
@@ -70,7 +70,7 @@ class MovieCard extends Component {
               <span className="MovieCard-genre">
                 {this.shortenGenres(genre).join(", ")}
               </span>
-              {plot}
+              {this.shortenPlot(plot)}
               <br /> <br />
               <button onClick={this.handleShowPlot}>see less</button>
             </div>
