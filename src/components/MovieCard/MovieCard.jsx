@@ -54,7 +54,12 @@ class MovieCard extends Component {
               </span>
               {this.shortenPlot(plot)}
               <br /> <br />
-              <button onClick={this.handleShowPlot}>see less</button>
+              <span className="MovieCard-seeMoreButtons">
+                <button onClick={this.handleShowPlot}>see less</button>{" "}
+                <button onClick={() => this.props.handleDeleteButtonClick(id)}>
+                  delete movie
+                </button>
+              </span>
             </div>
           </div>
         );
@@ -72,7 +77,12 @@ class MovieCard extends Component {
               </span>
               {this.shortenPlot(plot)}
               <br /> <br />
-              <button onClick={this.handleShowPlot}>see less</button>
+              <span className="MovieCard-seeMoreButtons">
+                <button onClick={this.handleShowPlot}>see less</button>{" "}
+                <button onClick={() => this.props.handleDeleteButtonClick(id)}>
+                  delete movie
+                </button>
+              </span>
             </div>
           </div>
         );
@@ -80,9 +90,8 @@ class MovieCard extends Component {
     } else {
       display = (
         <div className="MovieCard-body">
-          <img src={image} alt="movie poster" height="280px" /> <br />
+          <img src={image} alt="movie poster" height="300px" /> <br />
           <button onClick={this.handleShowPlot}>see more</button>
-          <button onClick={() => this.props.handleDeleteButtonClick(id)}>delete</button>
         </div>
       );
     }

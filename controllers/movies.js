@@ -55,7 +55,6 @@ function favesDelete(req, res, next) {
       return Movie.find({ list: "faves" });
     })
     .then(function (faves) {
-      console.log("faves: ", faves);
       const newFaves = [faves];
       return newFaves;
     })
@@ -74,7 +73,6 @@ function watchlistDelete(req, res, next) {
       return Movie.find({ list: "watchlist" });
     })
     .then(function (watchlist) {
-      console.log("watchlist: ", watchlist);
       const newWatchlist = [watchlist];
       return newWatchlist;
     })
