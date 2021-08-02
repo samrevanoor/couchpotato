@@ -75,8 +75,8 @@ class MovieResultPage extends Component {
           />
           {!this.props.user ? (
             <p>
-              ps: if you sign up for an account, you can save this movie to your
-              account to watch later!
+            ps: if you sign up for an account, you can save movies to your
+            account to watch later!
             </p>
           ) : (
             <p>

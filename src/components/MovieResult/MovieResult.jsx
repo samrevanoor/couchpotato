@@ -3,6 +3,7 @@ import "../MovieResult/MovieResult.css";
 
 function MovieResult(props) {
   let trailer = `https://www.youtube.com/results?search_query=${props.title}+${props.year}+trailer`;
+  let watch = `https://www.google.com/search?q=where+can+I+watch+${props.title}+movie+${props.year}`
 
   return (
     <div className="MovieResult-body">
@@ -23,6 +24,8 @@ function MovieResult(props) {
           <span>{props.plot}</span>
           <div className="MovieResult-footer">
             <a href={trailer} rel="noreferrer" target="_blank">watch the trailer</a>
+            &nbsp; | &nbsp;
+            <a href={watch} rel="noreferrer" target="_blank">where can I watch this movie?</a>
           </div>
         </div>
       </div>

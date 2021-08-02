@@ -8,7 +8,7 @@ function HomePage(props) {
   return (
     <>
       <div className="HomePage-body">
-        <Instructions />
+        <Instructions user={props.user}/>
         <GeneratorForm {...props}/>
         {!props.user && (
           <p>

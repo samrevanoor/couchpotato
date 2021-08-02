@@ -17,7 +17,6 @@
 
 .MovieResult-header {
     font-size: 16px;
-    /* text-transform: uppercase; */
     font-weight: 700;
 }
 
@@ -29,7 +28,6 @@
 .MovieResult-footer {
     font-size: 18px;
     display: flex;
-    justify-content: flex-end;
     margin-top: 30px;
     font-family: 'Gaegu', cursive;
 }
