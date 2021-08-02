@@ -22,6 +22,7 @@ function NavBar(props) {
         <br />
         <Link to="/faves">my faves</Link>&nbsp; | &nbsp;
         <Link to="/watchlist">my watch list</Link>&nbsp; | &nbsp;
+        <Link to="/">generator</Link>&nbsp; | &nbsp;
         <Link to="/logout" onClick={props.handleLogout}>
           log out
         </Link>
