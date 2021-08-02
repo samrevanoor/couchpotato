@@ -4,46 +4,12 @@ import yearRange from "../../utils/yearArray";
 // import { search } from "../../utils/randomizer"
 
 class GeneratorForm extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     genre: "",
-  //     startYear: "",
-  //     endYear: "",
-  //     // performers: [],
-  //     // director: "",
-  //   };
-  // }
-
-  // handleChange = (e) => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
-  // handlePerformersChange = (e) => {
-  //   let performerArray = e.target.value.replace(/\s*,\s*/g, ",").split(",");
-  //   this.setState({
-  //     performers: performerArray,
-  //   });
-  // };
 
   isFormInvalid() {
     if (this.props.startYear && this.props.endYear) {
       return this.props.startYear > this.props.endYear;
     }
   }
-
-  // handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     console.log(this.state);
-  //     await search(this.state);
-  //     this.props.history.push("/result")
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
 
   render() {
     return (
@@ -91,25 +57,6 @@ class GeneratorForm extends Component {
                 leave blank if you don't mind any year
               </span>
             </div>
-            {/* <div>
-              <label>performers </label>
-              <input
-                type="text"
-                placeholder="separate with commas"
-                value={this.state.performers}
-                name="performers"
-                onChange={(e) => this.handlePerformersChange(e)}
-              />
-            </div>
-            <div>
-              <label>director </label>
-              <input
-                type="text"
-                value={this.state.director}
-                name="director"
-                onChange={(e) => this.handleChange(e)}
-              />
-            </div> */}
           </div>
           <div>
             <button

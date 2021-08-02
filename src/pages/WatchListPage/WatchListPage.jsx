@@ -33,7 +33,7 @@ class WatchListPage extends Component {
                 <MovieCard
                   title={watch.title}
                   image={watch.image}
-                  genre={watch.genre}
+                  genre={watch.genreList}
                   year={watch.year}
                 />
               </div>

@@ -11,6 +11,15 @@ class MovieCard extends Component {
     }
   }
 
+  shortenGenres(genre) {
+    if (genre.length > 3) {
+      const shortGenreList = [`${genre[0]}, ${genre[1]}, ${genre[2]} +`]
+      return shortGenreList;
+    } else {
+      return genre
+    }
+  }
+
   render() {
     const { image, title, genre, year } = this.props;
     return (
@@ -19,7 +28,7 @@ class MovieCard extends Component {
         <span className="MovieCard-title">
           {this.shortenTitles(title)}, {year}
         </span>
-        <span>{genre.join(", ")}</span>
+        <span>{this.shortenGenres(genre).join(", ")}</span>
       </div>
     );
   }

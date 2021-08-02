@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const movieSchema = new Schema(
   {
     title: String,
-    genre: [String],
+    genreList: [String],
     year: Number,
     plot: String,
     image: String,

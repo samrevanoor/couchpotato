@@ -33,7 +33,7 @@ class FavesPage extends Component {
                 <MovieCard
                   title={fave.title}
                   image={fave.image}
-                  genre={fave.genre}
+                  genre={fave.genreList}
                   year={fave.year}
                 />
               </div>
