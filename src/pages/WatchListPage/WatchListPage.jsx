@@ -37,6 +37,7 @@ class WatchListPage extends Component {
                     year={watch.year}
                     plot={watch.plot}
                     tmdbId={watch.tmdbId}
+                    imdb={watch.imdb}
                 />
               </div>
             );

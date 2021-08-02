@@ -42,20 +42,41 @@ class MovieCard extends Component {
     let imdbLink = `https://www.imdb.com/title/${imdb}/?ref_=fn_al_tt_1`;
     let display;
     if (showPlot) {
-      display = (
-        <div className="MovieCard-body">
-          <span className="MovieCard-title">
-            {this.shortenTitles(title)}, {year}
-          </span>
-          <span className="MovieCard-genre">
-            {this.shortenGenres(genre).join(", ")}
-          </span>
-          {plot}
-          <br/>
-          <a href={imdbLink} rel="noreferrer" target="_blank">imdb</a>
-          <button onClick={this.handleShowPlot}>see less</button>
-        </div>
-      );
+      if (!imdb) {
+        display = (
+          <div className="MovieCard-body">
+            <div className="MovieCard-seeMore">
+              <span className="MovieCard-title">
+                {this.shortenTitles(title)}, {year}
+              </span>
+              <span className="MovieCard-genre">
+                {this.shortenGenres(genre).join(", ")}
+              </span>
+              {plot}
+              <br /> <br />
+              <button onClick={this.handleShowPlot}>see less</button>
+            </div>
+          </div>
+        );
+      } else {
+        display = (
+          <div className="MovieCard-body">
+            <div className="MovieCard-seeMore">
+              <span className="MovieCard-title">
+                <a href={imdbLink} rel="noreferrer" target="_blank">
+                  {this.shortenTitles(title)}, {year}
+                </a>
+              </span>
+              <span className="MovieCard-genre">
+                {this.shortenGenres(genre).join(", ")}
+              </span>
+              {plot}
+              <br /> <br />
+              <button onClick={this.handleShowPlot}>see less</button>
+            </div>
+          </div>
+        );
+      }
     } else {
       display = (
         <div className="MovieCard-body">

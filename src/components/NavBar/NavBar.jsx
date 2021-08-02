@@ -5,6 +5,15 @@ import gif from "./couch3.gif";
 import gif2 from "./couch.gif";
 
 function NavBar(props) {
+  function style(page) {
+    if (props.location.pathname === page) {
+      return {
+        backgroundColor: "rgba(255, 174, 0, 0.911)",
+        padding: "10px",
+        borderRadius: "5px"
+      };
+    }
+  }
   let nav = props.user ? (
     <div className="NavBar-header">
       <span className="NavBar-title">
@@ -20,9 +29,15 @@ function NavBar(props) {
           <img src={gif2} alt="" width="100px" />
         </a>
         <br />
-        <Link to="/faves">my faves</Link>&nbsp; | &nbsp;
-        <Link to="/watchlist">my watch list</Link>&nbsp; | &nbsp;
-        <Link to="/">generator</Link>&nbsp; | &nbsp;
+        <Link to="/faves" style={style("/faves")}>
+          my faves
+        </Link>
+        &nbsp; | &nbsp;
+        <Link to="/watchlist" style={style("/watchlist")}>
+          my watch list
+        </Link>
+        &nbsp; | &nbsp;
+        <Link to="/" style={style("/")}>generator</Link>&nbsp; | &nbsp;
         <Link to="/logout" onClick={props.handleLogout}>
           log out
         </Link>
