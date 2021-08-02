@@ -4,7 +4,7 @@ import "../MovieResultPage/MovieResultPage.css";
 import MovieResult from "../../components/MovieResult/MovieResult";
 import { search } from "../../utils/movieRandomizer";
 // import getGenreName from "../../utils/getGenre"
-import saveMovies from "../../utils/saveMovies";
+import movieSave from "../../utils/movieSave";
 import loading from "./loading.gif"
 
 class MovieResultPage extends Component {
@@ -40,7 +40,7 @@ class MovieResultPage extends Component {
 
   handleAddToFaves = async (e) => {
     try {
-      await saveMovies.addMovieToFaves(this.state);
+      await movieSave.addMovieToFaves(this.state);
     } catch (err) {
       console.log(err);
     }
@@ -48,7 +48,7 @@ class MovieResultPage extends Component {
 
   handleAddToWatchList = async (e) => {
     try {
-      await saveMovies.addMovieToWatchlist(this.state);
+      await movieSave.addMovieToWatchlist(this.state);
     } catch (err) {
       console.log(err);
     }

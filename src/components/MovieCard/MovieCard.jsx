@@ -37,7 +37,7 @@ class MovieCard extends Component {
   };
 
   render() {
-    const { image, title, genre, year, plot, imdb } = this.props;
+    const { image, title, genre, year, plot, imdb, id } = this.props;
     const { showPlot } = this.state;
     let imdbLink = `https://www.imdb.com/title/${imdb}/?ref_=fn_al_tt_1`;
     let display;
@@ -82,6 +82,7 @@ class MovieCard extends Component {
         <div className="MovieCard-body">
           <img src={image} alt="movie poster" height="280px" /> <br />
           <button onClick={this.handleShowPlot}>see more</button>
+          <button onClick={() => this.props.handleDeleteButtonClick(id)}>delete</button>
         </div>
       );
     }

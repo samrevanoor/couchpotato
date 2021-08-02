@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../WatchListPage/WatchListPage.css";
 import movieDisplay from "../../utils/movieDisplay";
+import movieUpdate from "../../utils/movieUpdate";
 import MovieCard from "../../components/MovieCard/MovieCard";
 
 class WatchListPage extends Component {
@@ -14,6 +15,13 @@ class WatchListPage extends Component {
       watchlist: result,
     });
   }
+
+  handleDeleteButtonClick = async (id) => {
+    const result = await movieUpdate.deleteMovieFromWatchlist(id);
+    this.setState({
+      watchlist: [...this.state.watchlist, result],
+    });
+  };
 
   render() {
     const { watchlist } = this.state;
@@ -38,6 +46,8 @@ class WatchListPage extends Component {
                     plot={watch.plot}
                     tmdbId={watch.tmdbId}
                     imdb={watch.imdb}
+                    id={watch._id}
+                    handleDeleteButtonClick={this.handleDeleteButtonClick}
                 />
               </div>
             );

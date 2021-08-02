@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../FavesPage/FavesPage.css";
 import movieDisplay from "../../utils/movieDisplay";
 import MovieCard from "../../components/MovieCard/MovieCard";
+import movieUpdate from "../../utils/movieUpdate";
 
 class FavesPage extends Component {
   state = {
@@ -14,6 +15,20 @@ class FavesPage extends Component {
       faves: result,
     });
   }
+
+  // async componentDidUpdate(){
+  //   const result = await movieDisplay.getFaves();
+  //   this.setState({
+  //     faves: result,
+  //   });
+  // }
+
+  handleDeleteButtonClick = async (id) => {
+    const result = await movieUpdate.deleteMovieFromFaves(id);
+    this.setState({
+      faves: [...this.state.faves, result],
+    });
+  };
 
   render() {
     const { faves } = this.state;
@@ -30,15 +45,17 @@ class FavesPage extends Component {
           {faves.map((fave, index) => {
             return (
               <div key={fave.tmdbId}>
-                  <MovieCard
-                    title={fave.title}
-                    image={fave.image}
-                    genre={fave.genreList}
-                    year={fave.year}
-                    plot={fave.plot}
-                    tmdbId={fave.tmdbId}
-                    imdb={fave.imdb}
-                  />
+                <MovieCard
+                  title={fave.title}
+                  image={fave.image}
+                  genre={fave.genreList}
+                  year={fave.year}
+                  plot={fave.plot}
+                  tmdbId={fave.tmdbId}
+                  imdb={fave.imdb}
+                  id={fave._id}
+                  handleDeleteButtonClick={this.handleDeleteButtonClick}
+                />
               </div>
             );
           })}

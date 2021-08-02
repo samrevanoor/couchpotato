@@ -48,21 +48,49 @@ function watchlistIndex(req, res, next) {
     });
 }
 
-// function showMovie(req, res) {
-//   Movie.findById(req.params.id)
-//     .then(function (movie) {
-//       console.log(res.json(movie));
-//       res.json(movie);
-//     })
-//     .catch(function (err) {
-//       console.log("whoops");
-//     });
-// }
+function favesDelete(req, res, next) {
+  Movie.findByIdAndDelete(req.params.id)
+    .then(function (movie) {
+      console.log("deleted!!!");
+      return Movie.find({ list: "faves" });
+    })
+    .then(function (faves) {
+      console.log("faves: ", faves);
+      const newFaves = [faves];
+      return newFaves;
+    })
+    .then(function (faves) {
+      res.status(200).json(faves);
+    })
+    .catch(function (err) {
+      res.status(400).json(err);
+    });
+}
+
+function watchlistDelete(req, res, next) {
+  Movie.findByIdAndDelete(req.params.id)
+    .then(function (movie) {
+      console.log("deleted!!!");
+      return Movie.find({ list: "watchlist" });
+    })
+    .then(function (watchlist) {
+      console.log("watchlist: ", watchlist);
+      const newWatchlist = [watchlist];
+      return newWatchlist;
+    })
+    .then(function (watchlist) {
+      res.status(200).json(watchlist);
+    })
+    .catch(function (err) {
+      res.status(400).json(err);
+    });
+}
 
 module.exports = {
   createFave,
   createWatchlist,
   favesIndex,
   watchlistIndex,
-  // showMovie
+  favesDelete,
+  watchlistDelete,
 };

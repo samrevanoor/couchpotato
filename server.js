@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 
 const app = express();
 
 require('dotenv').config();
 require('./config/database');
 
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 

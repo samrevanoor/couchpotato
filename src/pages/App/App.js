@@ -51,7 +51,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar {...this.props} user={this.state.user} handleLogout={this.handleLogout} />
+          <NavBar
+            {...this.props}
+            user={this.state.user}
+            handleLogout={this.handleLogout}
+          />
         </header>
         <Switch>
           <Route
