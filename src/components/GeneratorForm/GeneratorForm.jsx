@@ -9,6 +9,8 @@ class GeneratorForm extends Component {
         return true;
       }
       return this.props.startYear > this.props.endYear;
+    } else if (this.props.startYear || this.props.endYear) {
+      return true;
     } else {
       return !this.props.genre;
     }
