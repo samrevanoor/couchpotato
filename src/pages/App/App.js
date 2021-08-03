@@ -47,6 +47,8 @@ class App extends Component {
     }
   };
 
+  // handleNewGeneratorForm => reset state; passes to navbar, passes to "/" Links
+
   render() {
     return (
       <div className="App">
@@ -123,7 +125,11 @@ class App extends Component {
             exact
             path="/faves"
             render={() =>
-              userService.getUser() ? <FavesPage /> : <Redirect to="/login" />
+              userService.getUser() ? (
+                <FavesPage user={this.state.user._id} />
+              ) : (
+                <Redirect to="/login" />
+              )
             }
           />
           <Route
@@ -131,7 +137,7 @@ class App extends Component {
             path="/watchlist"
             render={() =>
               userService.getUser() ? (
-                <WatchListPage />
+                <WatchListPage user={this.state.user._id} />
               ) : (
                 <Redirect to="/login" />
               )

@@ -10,7 +10,7 @@ class FavesPage extends Component {
   };
 
   async componentDidMount() {
-    const result = await movieDisplay.getFaves();
+    const result = await movieDisplay.getFaves(this.props.user);
     this.setState({
       faves: result,
     });

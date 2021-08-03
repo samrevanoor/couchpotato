@@ -10,7 +10,7 @@ class WatchListPage extends Component {
   };
 
   async componentDidMount() {
-    const result = await movieDisplay.getWatchlist();
+    const result = await movieDisplay.getWatchlist(this.props.user);
     this.setState({
       watchlist: result,
     });

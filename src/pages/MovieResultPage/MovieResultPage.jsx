@@ -17,6 +17,7 @@ class MovieResultPage extends Component {
     tmdbId: "",
     imdb: "",
     movie: false,
+    user: this.props.user._id
   };
 
   async componentDidMount() {

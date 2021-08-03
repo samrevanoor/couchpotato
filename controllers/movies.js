@@ -1,4 +1,5 @@
 const Movie = require("../models/movie");
+const ObjectId = require('mongodb').ObjectId; 
 
 async function createFave(req, res, next) {
   req.body.list = "faves";
@@ -27,7 +28,7 @@ async function createWatchlist(req, res, next) {
 }
 
 function favesIndex(req, res, next) {
-  Movie.find({ list: "faves" })
+  Movie.find({ user: ObjectId(req.params.id), list: "faves" })
     .then(function (movies) {
       res.json(movies);
     })
@@ -38,7 +39,7 @@ function favesIndex(req, res, next) {
 }
 
 function watchlistIndex(req, res, next) {
-  Movie.find({ list: "watchlist" })
+  Movie.find({ user: ObjectId(req.params.id), list: "watchlist" })
     .then(function (movies) {
       res.json(movies);
     })
