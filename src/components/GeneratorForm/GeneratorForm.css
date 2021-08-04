@@ -26,10 +26,6 @@
   border: 2px inset rgb(118, 118, 118);
 }
 
-.GeneratorForm-body label {
-  font-weight: 500;
-}
-
 .GeneratorForm-body input::placeholder {
   font-size: 12px;
 }
@@ -37,7 +33,6 @@
 .GeneratorForm-button {
   border: 2px solid black;
   color: black;
-  font-weight: 500;
   padding: 10px 20px;
   background-color: rgba(255, 174, 0, 0.911);
   text-align: center;

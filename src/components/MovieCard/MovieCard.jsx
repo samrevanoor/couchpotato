@@ -60,11 +60,18 @@ class MovieCard extends Component {
                 <button onClick={() => this.props.handleDeleteButtonClick(id)}>
                   delete movie
                 </button>
+                {location.pathname === "/watchlist" && <br />}
                 {location.pathname === "/watchlist" && (
-                  <button onClick={() => this.props.handleMoveButtonClick(id)}>
+                  <button
+                    style={{ marginTop: "5px" }}
+                    onClick={() => this.props.handleMoveButtonClick(id)}
+                  >
                     move to faves
                   </button>
                 )}
+                <a href={imdbLink} rel="noreferrer" target="_blank">
+                  <button style={{ marginLeft: "5px" }}>imdb</button>
+                </a>
               </span>
             </div>
           </div>
@@ -88,11 +95,18 @@ class MovieCard extends Component {
                 <button onClick={() => this.props.handleDeleteButtonClick(id)}>
                   delete movie
                 </button>
+                {location.pathname === "/watchlist" && <br />}
                 {location.pathname === "/watchlist" && (
-                  <button onClick={() => this.props.handleMoveButtonClick(id)}>
+                  <button
+                    style={{ marginTop: "5px" }}
+                    onClick={() => this.props.handleMoveButtonClick(id)}
+                  >
                     move to faves
                   </button>
                 )}
+                <a href={imdbLink} rel="noreferrer" target="_blank">
+                  <button style={{ marginLeft: "5px" }}>imdb</button>
+                </a>
               </span>
             </div>
           </div>

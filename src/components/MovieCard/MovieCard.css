@@ -7,7 +7,10 @@
   flex-direction: column;
   border: 10px solid black;
   background-color: rgba(255, 174, 0, 0.911);
-  background-image: linear-gradient(rgb(255, 223, 148), rgba(255, 174, 0, 0.911));
+  background-image: linear-gradient(
+    rgb(255, 223, 148),
+    rgba(255, 174, 0, 0.911)
+  );
   margin: 20px;
   padding: 20px;
   align-items: center;
@@ -18,9 +21,9 @@
 }
 
 .MovieCard-title {
-    font-weight: 700;
-    font-size: 16px;
-    margin: 5px 0;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 5px 0;
 }
 
 .MovieCard-genre {
@@ -34,4 +37,10 @@
   align-items: center;
   margin-top: 10%;
   margin-bottom: 10%;
+}
+
+.MovieCard-seeMoreButtons {
+  font-size: 12px;
+  position: absolute;
+  bottom: 10%;
 }

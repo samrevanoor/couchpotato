@@ -5,20 +5,39 @@ import MovieResult from "../../components/MovieResult/MovieResult";
 import { search } from "../../utils/movieRandomizer";
 // import getGenreName from "../../utils/getGenre"
 import movieSave from "../../utils/movieSave";
-import loading from "./loading.gif"
+import loading from "./loading.gif";
 
 class MovieResultPage extends Component {
   state = {
-    title: "",
-    genreList: "",
-    year: "",
-    plot: "",
-    image: "",
-    tmdbId: "",
-    imdb: "",
-    movie: false,
-    user: this.props.user._id
+    ...this.getInitialState(),
   };
+
+  getInitialState() {
+    if (!this.props.user) {
+      return {
+        title: "",
+        genreList: "",
+        year: "",
+        plot: "",
+        image: "",
+        tmdbId: "",
+        imdb: "",
+        movie: false,
+      };
+    } else {
+      return {
+        title: "",
+        genreList: "",
+        year: "",
+        plot: "",
+        image: "",
+        tmdbId: "",
+        imdb: "",
+        movie: false,
+        user: this.props.user._id
+      };
+    }
+  }
 
   async componentDidMount() {
     const result = await search(this.props);
@@ -56,12 +75,15 @@ class MovieResultPage extends Component {
   };
 
   render() {
-    const { title, genreList, year, plot, image, tmdbId, imdb, movie } = this.state;
+    const { title, genreList, year, plot, image, tmdbId, imdb, movie } =
+      this.state;
     let display;
     if (!movie) {
-      display = <div className="MovieResultPage-body">
-        <img src={loading} alt="loading ..."/>
-      </div>;
+      display = (
+        <div className="MovieResultPage-body">
+          <img src={loading} alt="loading ..." />
+        </div>
+      );
     } else {
       display = (
         <div className="MovieResultPage-body">
@@ -76,8 +98,8 @@ class MovieResultPage extends Component {
           />
           {!this.props.user ? (
             <p>
-            ps: if you sign up for an account, you can save movies to your
-            account to watch later!
+              ps: if you sign up for an account, you can save movies to your
+              account to watch later!
             </p>
           ) : (
             <p>
@@ -100,7 +122,7 @@ class MovieResultPage extends Component {
         </div>
       );
     }
-    return <div>{ display }</div>;
+    return <div>{display}</div>;
   }
 }
 
