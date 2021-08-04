@@ -49,38 +49,32 @@ function watchlistIndex(req, res, next) {
     });
 }
 
-function favesDelete(req, res, next) {
-  Movie.findByIdAndDelete(req.params.id)
-    .then(function (movie) {
-      return Movie.find({ list: "faves" });
-    })
-    .then(function (faves) {
-      const newFaves = [faves];
-      return newFaves;
-    })
-    .then(function (faves) {
-      res.status(200).json(faves);
-    })
-    .catch(function (err) {
-      res.status(400).json(err);
-    });
+async function favesDelete(req, res, next) {
+  const movie = await Movie.findById(req.params.id);
+  const user = movie.user;
+  await Movie.findByIdAndDelete(req.params.id);
+  const newFaves = await Movie.find({ user: ObjectId(user), list: "faves" });
+  const faves = [newFaves];
+  try {
+    await res.status(200).json(faves);
+  }
+  catch (err) {
+    console.log("Error", err);
+  }
 }
 
-function watchlistDelete(req, res, next) {
-  Movie.findByIdAndDelete(req.params.id)
-    .then(function (movie) {
-      return Movie.find({ list: "watchlist" });
-    })
-    .then(function (watchlist) {
-      const newWatchlist = [watchlist];
-      return newWatchlist;
-    })
-    .then(function (watchlist) {
-      res.status(200).json(watchlist);
-    })
-    .catch(function (err) {
-      res.status(400).json(err);
-    });
+async function watchlistDelete(req, res, next) {
+  const movie = await Movie.findById(req.params.id);
+  const user = movie.user;
+  await Movie.findByIdAndDelete(req.params.id);
+  const newWatchlist = await Movie.find({ user: ObjectId(user), list: "watchlist" });
+  const watchlist = [newWatchlist];
+  try {
+    await res.status(200).json(watchlist);
+  }
+  catch (err) {
+    console.log("Error", err);
+  }
 }
 
 function watchlistUpdate(req, res, next) {
@@ -91,7 +85,6 @@ function watchlistUpdate(req, res, next) {
     })
     .then(function (movie) {
       const user = movie.user;
-      console.log(movie);
       return user;
     })
     .then(function (user) {
@@ -102,7 +95,6 @@ function watchlistUpdate(req, res, next) {
       return newWatchlist;
     })
     .then(function (newWatchlist) {
-      console.log("newWatchList ", newWatchlist);
       res.json(newWatchlist);
     });
 }
