@@ -49,6 +49,8 @@ class App extends Component {
 
   // handleNewGeneratorForm => reset state; passes to navbar, passes to "/" Links
 
+  // handleRegenerateFunction 
+  
   render() {
     return (
       <div className="App">

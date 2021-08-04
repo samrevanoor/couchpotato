@@ -4,7 +4,7 @@ const MID_URL =
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export async function search(query) {
-  if (query.startYear && query.startYear) {
+  if (query.startYear && query.endYear) {
     const startYear = `${query.startYear}-01-01`;
     const endYear = `${query.endYear}-01-01`;
     const response1 = await fetch(
@@ -22,7 +22,6 @@ export async function search(query) {
       `${BASE_URL}movie/${response3}?api_key=${API_KEY}`
     );
     const movie = await result3.json();
-    console.log("Result", movie);
     return movie;
   } else {
     const response1 = await fetch(
@@ -40,7 +39,6 @@ export async function search(query) {
       `${BASE_URL}movie/${response3}?api_key=${API_KEY}`
     );
     const movie = await result3.json();
-    console.log("Result", movie);
     return movie;
   }
 }
@@ -48,7 +46,7 @@ export async function search(query) {
 // helper functions
 
 function randomPage(pages) {
-  const page = Math.floor(Math.random() * pages) + 1; // not doing the + 1 because I don't want results from the last page
+  const page = Math.floor(Math.random() * pages) + 1;
   return page;
 }
 
