@@ -23,6 +23,14 @@ class WatchListPage extends Component {
     });
   };
 
+  handleMoveButtonClick = async (id) => {
+    const result = await movieUpdate.moveFromWatchlistFromFaves(id);
+    this.setState({
+      watchlist: result,
+    });
+    this.props.history.push("/faves")
+  };
+
   render() {
     const { watchlist } = this.state;
     let display;
@@ -39,15 +47,17 @@ class WatchListPage extends Component {
             return (
               <div key={watch.tmdbId}>
                 <MovieCard
-                    title={watch.title}
-                    image={watch.image}
-                    genre={watch.genreList}
-                    year={watch.year}
-                    plot={watch.plot}
-                    tmdbId={watch.tmdbId}
-                    imdb={watch.imdb}
-                    id={watch._id}
-                    handleDeleteButtonClick={this.handleDeleteButtonClick}
+                  {...this.props}
+                  title={watch.title}
+                  image={watch.image}
+                  genre={watch.genreList}
+                  year={watch.year}
+                  plot={watch.plot}
+                  tmdbId={watch.tmdbId}
+                  imdb={watch.imdb}
+                  id={watch._id}
+                  handleDeleteButtonClick={this.handleDeleteButtonClick}
+                  handleMoveButtonClick={this.handleMoveButtonClick}
                 />
               </div>
             );

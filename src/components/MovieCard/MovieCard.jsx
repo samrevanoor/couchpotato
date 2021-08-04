@@ -37,7 +37,7 @@ class MovieCard extends Component {
   };
 
   render() {
-    const { image, title, genre, year, plot, imdb, id } = this.props;
+    const { image, title, genre, year, plot, imdb, id, location } = this.props;
     const { showPlot } = this.state;
     let altText = `movie poster for ${title}`;
     let imdbLink = `https://www.imdb.com/title/${imdb}/?ref_=fn_al_tt_1`;
@@ -60,6 +60,11 @@ class MovieCard extends Component {
                 <button onClick={() => this.props.handleDeleteButtonClick(id)}>
                   delete movie
                 </button>
+                {location.pathname === "/watchlist" && (
+                  <button onClick={() => this.props.handleMoveButtonClick(id)}>
+                    move to faves
+                  </button>
+                )}
               </span>
             </div>
           </div>
@@ -83,6 +88,11 @@ class MovieCard extends Component {
                 <button onClick={() => this.props.handleDeleteButtonClick(id)}>
                   delete movie
                 </button>
+                {location.pathname === "/watchlist" && (
+                  <button onClick={() => this.props.handleMoveButtonClick(id)}>
+                    move to faves
+                  </button>
+                )}
               </span>
             </div>
           </div>

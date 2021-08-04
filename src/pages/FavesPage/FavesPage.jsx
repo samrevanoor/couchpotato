@@ -39,6 +39,7 @@ class FavesPage extends Component {
             return (
               <div key={fave.tmdbId}>
                 <MovieCard
+                  {...this.props}
                   title={fave.title}
                   image={fave.image}
                   genre={fave.genreList}

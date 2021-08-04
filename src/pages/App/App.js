@@ -124,9 +124,9 @@ class App extends Component {
           <Route
             exact
             path="/faves"
-            render={() =>
+            render={(props) =>
               userService.getUser() ? (
-                <FavesPage user={this.state.user._id} />
+                <FavesPage {...props} user={this.state.user._id} />
               ) : (
                 <Redirect to="/login" />
               )
@@ -135,9 +135,9 @@ class App extends Component {
           <Route
             exact
             path="/watchlist"
-            render={() =>
+            render={(props) =>
               userService.getUser() ? (
-                <WatchListPage user={this.state.user._id} />
+                <WatchListPage {...props} user={this.state.user._id} />
               ) : (
                 <Redirect to="/login" />
               )
