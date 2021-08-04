@@ -1,6 +1,6 @@
 const BASE_URL = "https://api.themoviedb.org/3/";
 const MID_URL =
-  "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&";
+  "&language=en-US&include_adult=false&include_video=false&";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export async function search(query) {
