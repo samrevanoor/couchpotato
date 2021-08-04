@@ -34,7 +34,7 @@ export async function search(query) {
       `${BASE_URL}discover/movie?api_key=${API_KEY}${MID_URL}page=${page}&with_genres=${query.genre}`
     );
     const result2 = await response2.json();
-    const response3 = result2.results[randomMovie()].id;
+    const response3 = result2.results[randomMovie(result2.results.length - 1)].id;
     const result3 = await fetch(
       `${BASE_URL}movie/${response3}?api_key=${API_KEY}`
     );
@@ -50,7 +50,8 @@ function randomPage(pages) {
   return page;
 }
 
-function randomMovie() {
-  const movieIndex = Math.floor(Math.random() * 20) + 1;
+function randomMovie(num) {
+  const movieIndex = Math.floor(Math.random() * num) + 1;
+  console.log("Movie index ", movieIndex)
   return movieIndex;
 }

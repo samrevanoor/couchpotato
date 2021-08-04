@@ -40,7 +40,6 @@ class App extends Component {
   handleGeneratorFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(this.state);
       this.props.history.push("/result");
     } catch (err) {
       console.log(err);
@@ -49,8 +48,6 @@ class App extends Component {
 
   // handleNewGeneratorForm => reset state; passes to navbar, passes to "/" Links
 
-  // handleRegenerateFunction 
-  
   render() {
     return (
       <div className="App">

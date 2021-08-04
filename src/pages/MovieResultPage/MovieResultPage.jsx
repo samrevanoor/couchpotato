@@ -34,7 +34,7 @@ class MovieResultPage extends Component {
         tmdbId: "",
         imdb: "",
         movie: false,
-        user: this.props.user._id
+        user: this.props.user._id,
       };
     }
   }
@@ -57,6 +57,30 @@ class MovieResultPage extends Component {
       console.log("no movie");
     }
   }
+
+  handleRegenerateButton = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await search(this.props);
+      if (result) {
+        const BASE_URL = "https://image.tmdb.org/t/p/w500";
+        this.setState({
+          title: result.title,
+          genreList: result.genres.map((genre) => genre.name).join(", "),
+          year: result.release_date.substr(0, 4),
+          plot: result.overview,
+          image: `${BASE_URL}${result.poster_path}`,
+          tmdbId: result.id,
+          imdb: result.imdb_id,
+          movie: true,
+        });
+      } else {
+        console.log("no movie");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   handleAddToFaves = async (e) => {
     try {
@@ -116,7 +140,12 @@ class MovieResultPage extends Component {
                 add to watch list
               </Link>
               &nbsp; | &nbsp;
-              <Link to="/result">regenerate!</Link>
+              <Link
+                to="/result"
+                onClick={(e) => this.handleRegenerateButton(e)}
+              >
+                regenerate!
+              </Link>
             </p>
           )}
         </div>

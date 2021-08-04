@@ -59,6 +59,7 @@ class GeneratorForm extends Component {
                 {yearRange()}
               </select>
               &nbsp;
+              &nbsp;
               <label>to</label>
               <select
                 name="endYear"
