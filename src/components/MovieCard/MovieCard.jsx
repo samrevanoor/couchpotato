@@ -69,9 +69,6 @@ class MovieCard extends Component {
                     move to faves
                   </button>
                 )}
-                <a href={imdbLink} rel="noreferrer" target="_blank">
-                  <button style={{ marginLeft: "5px" }}>imdb</button>
-                </a>
               </span>
             </div>
           </div>
