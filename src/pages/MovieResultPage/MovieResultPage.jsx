@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../MovieResultPage/MovieResultPage.css";
 import MovieResult from "../../components/MovieResult/MovieResult";
-import { search } from "../../utils/movieRandomizer";
+import movieRandomizer from "../../utils/movieRandomizer";
 // import getGenreName from "../../utils/getGenre"
 import movieSave from "../../utils/movieSave";
 import loading from "./loading.gif";
@@ -40,7 +40,7 @@ class MovieResultPage extends Component {
   }
 
   async componentDidMount() {
-    const result = await search(this.props);
+    const result = await movieRandomizer.search(this.props);
     if (result) {
       const BASE_URL = "https://image.tmdb.org/t/p/w500";
       this.setState({
@@ -61,7 +61,7 @@ class MovieResultPage extends Component {
   handleRegenerateButton = async (e) => {
     e.preventDefault();
     try {
-      const result = await search(this.props);
+      const result = await movieRandomizer.search(this.props);
       if (result) {
         const BASE_URL = "https://image.tmdb.org/t/p/w500";
         this.setState({
@@ -81,6 +81,30 @@ class MovieResultPage extends Component {
       console.log(err);
     }
   };
+
+  handleSimilarMovies = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await movieRandomizer.similarSearch(this.state.tmdbId);
+      if (result) {
+        const BASE_URL = "https://image.tmdb.org/t/p/w500";
+        this.setState({
+          title: result.title,
+          genreList: result.genres.map((genre) => genre.name).join(", "),
+          year: result.release_date.substr(0, 4),
+          plot: result.overview,
+          image: `${BASE_URL}${result.poster_path}`,
+          tmdbId: result.id,
+          imdb: result.imdb_id,
+          movie: true,
+        });
+      } else {
+        console.log("no movie");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   handleAddToFaves = async (e) => {
     try {
@@ -145,6 +169,13 @@ class MovieResultPage extends Component {
                 onClick={(e) => this.handleRegenerateButton(e)}
               >
                 regenerate!
+              </Link>
+              &nbsp; | &nbsp;
+              <Link
+                to="/result"
+                onClick={(e) => this.handleSimilarMovies(e)}
+              >
+                get similar movies
               </Link>
             </p>
           )}

@@ -1,9 +1,10 @@
+/* eslint-disable import/no-anonymous-default-export */
 const BASE_URL = "https://api.themoviedb.org/3/";
 const MID_URL =
   "&language=en-US&include_adult=false&include_video=false&";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-export async function search(query) {
+async function search(query) {
   if (query.startYear && query.endYear) {
     const startYear = `${query.startYear}-01-01`;
     const endYear = `${query.endYear}-01-01`;
@@ -43,6 +44,17 @@ export async function search(query) {
   }
 }
 
+async function similarSearch(id) {
+  const response = await fetch(`${BASE_URL}movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`);
+  const result = await response.json();
+  const response2 = result.results[randomMovie(result.results.length - 1)].id;
+  const result3 = await fetch(
+    `${BASE_URL}movie/${response2}?api_key=${API_KEY}`
+  );
+  const movie = await result3.json();
+  return movie;
+}
+
 // helper functions
 
 function randomPage(pages) {
@@ -54,4 +66,9 @@ function randomMovie(num) {
   const movieIndex = Math.floor(Math.random() * num) + 1;
   console.log("Movie index ", movieIndex)
   return movieIndex;
+}
+
+export default {
+  search,
+  similarSearch
 }
