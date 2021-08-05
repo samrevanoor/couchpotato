@@ -1,7 +1,7 @@
 import React from "react";
 import "../LogoutPage/LogoutPage.css";
 import Footer from "../../components/Footer/Footer";
-import potato from "./bye.gif";
+import potato from "./potato.gif";
 
 function LogoutPage(props) {
   return (

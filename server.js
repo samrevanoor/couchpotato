@@ -2,14 +2,12 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
-const methodOverride = require("method-override");
 
 const app = express();
 
 require("dotenv").config();
 require("./config/database");
 
-app.use(methodOverride("_method"));
 app.use(logger("dev"));
 app.use(express.json());
 
@@ -18,8 +16,8 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // API routes
 app.use("/api/users", require("./routes/api/users"));
-app.use("/api/movies", require("./routes/api/movies"));
 app.use(require("./config/auth"));
+app.use("/api/movies", require("./routes/api/movies"));
 
 // Catch-all
 app.get("/*", function (req, res) {
