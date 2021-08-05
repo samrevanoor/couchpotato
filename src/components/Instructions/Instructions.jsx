@@ -5,9 +5,9 @@ function Instructions(props) {
   return (
     <div className="Instructions-body">
       {!props.user ? (
-        <h4>hey, are you looking for something to watch?</h4>
+        <h3>hey, are you looking for something to watch?</h3>
       ) : (
-        <h4> hey {props.user.name}, are you looking for something to watch?</h4>
+        <h3> hey {props.user.name}, are you looking for something to watch?</h3>
       )}
       <p>
         fill out the following fields and we’ll get you on the couch in no time!

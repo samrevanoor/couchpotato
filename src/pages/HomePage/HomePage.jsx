@@ -13,7 +13,7 @@ function HomePage(props) {
         {!props.user && (
           <p>
             ps: if you sign up for an account, you can save movies to your
-            account to watch later!
+            list to watch later!
           </p>
         )}
       </div>
