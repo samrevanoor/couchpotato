@@ -9,7 +9,7 @@ function LogoutPage(props) {
       <div className="LogoutPage-body">
         <img src={potato} alt="bye!" />
         <br />
-        thanks for using our app! come back any time ♥
+        thanks for using my app! come back any time ♥
       </div>
       <Footer />
     </div>

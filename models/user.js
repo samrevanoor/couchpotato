@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 6;
 
 const userSchema = new Schema({
-  name: String,
+  name: {type: String, maxLength: 30},
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String
 }, {

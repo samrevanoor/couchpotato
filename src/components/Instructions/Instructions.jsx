@@ -7,7 +7,7 @@ function Instructions(props) {
       {!props.user ? (
         <h3>hey, are you looking for something to watch?</h3>
       ) : (
-        <h3> hey {props.user.name}, are you looking for something to watch?</h3>
+        <h3> hey {props.user.name.toLowerCase()}, are you looking for something to watch?</h3>
       )}
       <p>
         fill out the following fields and we’ll get you on the couch in no time!
