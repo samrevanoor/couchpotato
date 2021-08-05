@@ -7,3 +7,9 @@ a {
   color: black;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 500px) {
+  .App-header {
+    margin: 10px;
+  }
+}

@@ -14,3 +14,10 @@
     margin-top: 30px;
     font-size: 14px;
 }
+
+@media only screen and (max-width: 500px) {
+    .HomePage-body {
+      left: 4%;
+      right: 4%
+    }
+  }

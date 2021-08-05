@@ -13,3 +13,26 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+@media only screen and (max-width: 500px) {
+    .MovieResultPage-body {
+        left: 5%;
+        right: 5%;
+    }
+
+    .MovieResultPage-body p {
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 950px) {
+    .MovieResultPage-body {
+        top: 30%;
+        left: 5%;
+        right: 5%;
+    }
+
+    .MovieResultPage-body p {
+        padding-bottom: 20px;
+    }
+}
