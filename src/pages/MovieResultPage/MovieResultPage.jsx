@@ -127,7 +127,6 @@ class MovieResultPage extends Component {
             </p>
           ) : (
             <p>
-              {/* TO DO */}
               <Link to="/">back</Link>&nbsp; | &nbsp;
               <Link to="/faves" onClick={(e) => this.handleAddToFaves(e)}>
                 add to faves
