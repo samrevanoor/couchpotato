@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../MovieResultPage/MovieResultPage.css";
 import MovieResult from "../../components/MovieResult/MovieResult";
 import movieRandomizer from "../../utils/movieRandomizer";
-// import getGenreName from "../../utils/getGenre"
 import movieSave from "../../utils/movieSave";
 import loading from "./loading.gif";
 

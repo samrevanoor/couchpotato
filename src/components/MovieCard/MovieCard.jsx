@@ -39,7 +39,7 @@ class MovieCard extends Component {
   render() {
     const { image, title, genre, year, plot, imdb, id, location } = this.props;
     const { showPlot } = this.state;
-    let altText = `movie poster for ${title}`;
+    let altText = `no movie poster for ${title} 😞`;
     let imdbLink = `https://www.imdb.com/title/${imdb}/?ref_=fn_al_tt_1`;
     let display;
     if (showPlot) {
