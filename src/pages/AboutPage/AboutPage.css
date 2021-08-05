@@ -8,3 +8,16 @@
     font-family: 'Gaegu', cursive;
     z-index: -1;
 }
+
+@media only screen and (max-width: 700px) {
+    .AboutPage-body{
+        left: 10%;
+        right: 10%;
+        top: 20%;
+        font-size: 16px;
+    }
+
+    .AboutPage-body img {
+        width: 250px;
+    }
+}
