@@ -18,14 +18,14 @@ function NavBar(props) {
     <div className="NavBar-header">
       <span className="NavBar-title">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/">
+        <a href="/about">
           <img src={gif} alt="" width="100px" />
         </a>
         <br />
         &nbsp;<Link to="/">couch potato</Link>
       </span>
       <span className="NavBar-links">
-        <a href="/" className="NavBar-image">
+        <a href="/about" className="NavBar-image">
           <img src={gif2} alt="" width="100px" />
         </a>
         <br />
@@ -37,7 +37,7 @@ function NavBar(props) {
           my watch list
         </Link>
         &nbsp; | &nbsp;
-        <Link to="/" style={style("/")}>generator</Link>&nbsp; | &nbsp;
+        <Link to="/" style={style("/")} onClick={props.handleNewGeneratorForm}>generator</Link>&nbsp; | &nbsp;
         <Link to="/logout" onClick={props.handleLogout}>
           log out
         </Link>
@@ -47,15 +47,15 @@ function NavBar(props) {
     <div>
       <span className="NavBar-title">
         &nbsp;&nbsp;
-        <a href="/">
+        <a href="/about">
           <img src={gif} alt="" width="100px" />
         </a>
         <br />
-        <Link to="/">couch potato</Link>
+        <Link to="/about">couch potato</Link>
       </span>
       <span className="NavBar-links">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/">
+        <a href="/about">
           <img src={gif2} alt="" width="100px" />
         </a>
         <br />

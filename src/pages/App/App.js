@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import LogoutPage from "../LogoutPage/LogoutPage";
+import AboutPage from "../AboutPage/AboutPage";
 import FavesPage from "../FavesPage/FavesPage";
 import WatchListPage from "../WatchListPage/WatchListPage";
 import HomePage from "../HomePage/HomePage";
@@ -46,6 +47,14 @@ class App extends Component {
     }
   };
 
+  handleNewGeneratorForm = () => {
+    this.setState({
+      startYear: "",
+      endYear: "",
+      genre: "",
+    })
+  }
+
   // handleNewGeneratorForm => reset state; passes to navbar, passes to "/" Links
 
   render() {
@@ -56,6 +65,7 @@ class App extends Component {
             {...this.props}
             user={this.state.user}
             handleLogout={this.handleLogout}
+            handleNewGeneratorForm={this.handleNewGeneratorForm}
           />
         </header>
         <Switch>
@@ -103,6 +113,7 @@ class App extends Component {
             }
           />
           <Route exact path="/logout" render={() => <LogoutPage />} />
+          <Route exact path="/about" render={() => <AboutPage />} />
           <Route
             exact
             path="/result"

@@ -1,0 +1,10 @@
+.AboutPage-body {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 10%;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gaegu', cursive;
+    z-index: -1;
+}
