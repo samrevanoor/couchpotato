@@ -42,8 +42,6 @@ For my final project, I decided to create a movie generator app called Couch Pot
 
 Log In page
 
-<br>
-
 <img src="public/image1.png">
 Generator page as a user
 
@@ -64,11 +62,12 @@ Faves page
 
 <br>
 
+<img src="public/image5.png">
 ------
 
 ### **Getting Started**
 
-You can access my app [here](https://thecouchpotato.herokuapp.com/), and the repo [here]https://github.com/samrevanoor/couchpotato).
+You can access my app [here](https://thecouchpotato.herokuapp.com/), and the repo [here](https://github.com/samrevanoor/couchpotato).
 
 I used [this Trello board](https://trello.com/b/rUBdn7QQ/project-4-couch-potato) for my project planning and user stories.
 
@@ -79,8 +78,8 @@ I used [this Trello board](https://trello.com/b/rUBdn7QQ/project-4-couch-potato)
     <img src="public/wireframes2.png"><br>
     <img src="public/wireframes3.png"><br>
     <img src="public/wireframes4.png"><br>
-    <img src="public/wireframes5.png"><br>
     <img src="public/wireframes6.png"><br>
+    <img src="public/wireframes5.png"><br>
     <img src="public/wireframes7.png"><br>
     <img src="public/wireframes8.png"><br>
 </details>
