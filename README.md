@@ -6,14 +6,14 @@ The Couch Potato [web-app](https://thecouchpotato.herokuapp.com/)
 
 ### **Objective**
 
-To create a functioning full-stack application with full-CRUD operations and RESTful routing, using React.js, Node.js, Express.js, Mongo, Mongoose, AJAX and a third party API (TMDb API).
+To create a functioning full-stack application with full-CRUD operations and RESTful routing, using React.js, Node.js, Express.js, Mongo, Mongoose, AJAX and (optional) a third party API.
 <br>
 
 -------
 
 ### **Background**
 
-For my final project, I decided to create a movie generator app called Couch Potato, designed to find you a movie to watch based on your preferences. You can also add moves to your watch list for later + other fun features! I used the entire MERN stack for this project, along with a third-party API, AJAX and token-based authentication.
+For my final project, I decided to create a movie generator app called Couch Potato, designed to find you a movie to watch based on your preferences. You can also add moves to your watch list for later + other fun features! I used the entire MERN stack for this project, along with a third-party API (TMDb API), AJAX and token-based authentication.
 <br>
 
 ------
