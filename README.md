@@ -71,22 +71,6 @@ You can access my app [here](https://thecouchpotato.herokuapp.com/), and the rep
 
 I used [this Trello board](https://trello.com/b/rUBdn7QQ/project-4-couch-potato) for my project planning and user stories.
 
-<details>
-    <summary>Click to expand to view my wireframes.</summary>
-    <img src="public/wireframes.png"><br>
-    <img src="public/wireframes1.png"><br>
-    <img src="public/wireframes2.png"><br>
-    <img src="public/wireframes3.png"><br>
-    <img src="public/wireframes4.png"><br>
-    <img src="public/wireframes6.png"><br>
-    <img src="public/wireframes5.png"><br>
-    <img src="public/wireframes7.png"><br>
-    <img src="public/wireframes8.png"><br>
-</details>
-
-Here is my ERD: <br>
-<img src="public/erd.png">
-
 <br>
 
 ------
