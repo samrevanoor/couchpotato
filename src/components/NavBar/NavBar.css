@@ -53,6 +53,7 @@
     
       .NavBar-links {
         font-size: 18px;
+        float: right;
         margin-left: 20px;
         text-align: center;
       }

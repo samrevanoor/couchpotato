@@ -35,45 +35,33 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <div className="LoginPage-text">
-          <header className="header-footer">log in</header>
-          <br />
+        <div className="LoginPage-body">
           <form className="form-horizontal" onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <div className="col-sm-12">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="email"
-                  value={this.state.email}
-                  name="email"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-12">
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="password"
-                  value={this.state.pw}
-                  name="pw"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-12 text-center">
-                <button className="btn btn-default">log in</button>
-                &nbsp;&nbsp;&nbsp;
-                <Link to="/"><button className="btn btn-default">cancel</button></Link>
-              </div>
+            <div className="LoginPage-form">
+              <input
+                type="email"
+                placeholder="email"
+                value={this.state.email}
+                name="email"
+                onChange={this.handleChange}
+              />
+              <input
+                type="password"
+                placeholder="password"
+                value={this.state.pw}
+                name="pw"
+                onChange={this.handleChange}
+              />
+              <button className="btn btn-default LoginPage-button">log in</button>
+              &nbsp;&nbsp;&nbsp;
+              <Link to="/">
+                <button className="btn btn-default LoginPage-button">cancel</button>
+              </Link>
             </div>
           </form>
           <p>{this.state.message}</p>
         </div>
-        <img src={image} alt="couch" width="400px"/>
+        <img src={image} alt="couch" width="400px" />
       </div>
     );
   }
