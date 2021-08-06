@@ -112,7 +112,7 @@ class MovieCard extends Component {
     } else {
       display = (
         <div className="MovieCard-body">
-          <img src={image} alt={altText} height="300px" /> <br />
+          <img src={image} alt={altText} height="300px" width="200px" /> <br />
           <button onClick={this.handleShowPlot}>see more</button>
         </div>
       );

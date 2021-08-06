@@ -5,6 +5,7 @@ import MovieResult from "../../components/MovieResult/MovieResult";
 import movieRandomizer from "../../utils/movieRandomizer";
 import movieSave from "../../utils/movieSave";
 import loading from "./loading.gif";
+import noPoster from "./no_image.jpeg";
 
 class MovieResultPage extends Component {
   state = {
@@ -41,17 +42,30 @@ class MovieResultPage extends Component {
   async componentDidMount() {
     const result = await movieRandomizer.search(this.props);
     if (result) {
-      const BASE_URL = "https://image.tmdb.org/t/p/w500";
-      this.setState({
-        title: result.title,
-        genreList: result.genres.map((genre) => genre.name).join(", "),
-        year: result.release_date.substr(0, 4),
-        plot: result.overview,
-        image: `${BASE_URL}${result.poster_path}`,
-        tmdbId: result.id,
-        imdb: result.imdb_id,
-        movie: true,
-      });
+      if (!result.poster_path) {
+        this.setState({
+          title: result.title,
+          genreList: result.genres.map((genre) => genre.name).join(", "),
+          year: result.release_date.substr(0, 4),
+          plot: result.overview,
+          image: {noPoster}.noPoster,
+          tmdbId: result.id,
+          imdb: result.imdb_id,
+          movie: true,
+        });
+      } else {
+        const BASE_URL = "https://image.tmdb.org/t/p/w500";
+        this.setState({
+          title: result.title,
+          genreList: result.genres.map((genre) => genre.name).join(", "),
+          year: result.release_date.substr(0, 4),
+          plot: result.overview,
+          image: `${BASE_URL}${result.poster_path}`,
+          tmdbId: result.id,
+          imdb: result.imdb_id,
+          movie: true,
+        });
+      }
     } else {
       console.log("no movie");
     }
@@ -79,7 +93,7 @@ class MovieResultPage extends Component {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   handleAddToFaves = async (e) => {
     try {
@@ -138,10 +152,7 @@ class MovieResultPage extends Component {
                 add to watch list
               </Link>
               &nbsp; | &nbsp;
-              <Link
-                to="/result"
-                onClick={(e) => this.handleSimilarMovies(e)}
-              >
+              <Link to="/result" onClick={(e) => this.handleSimilarMovies(e)}>
                 get similar movie
               </Link>
             </p>
