@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# The Couch Potato App
+## by Sam Revanoor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Couch Potato [web-app](https://thecouchpotato.herokuapp.com/)
 
-## Available Scripts
 
-In the project directory, you can run:
+### **Objective**
 
-### `yarn start`
+To create a functioning full-stack application with full-CRUD operations and RESTful routing, using React.js, Node.js, Express.js, Mongo, Mongoose, AJAX and a third party API (TMDb API).
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-------
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### **Background**
 
-### `yarn test`
+For my final project, I decided to create a movie generator app called Couch Potato, designed to find you a movie to watch based on your preferences. You can also add moves to your watch list for later + other fun features! I used the entire MERN stack for this project, along with a third-party API, AJAX and token-based authentication.
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+------
 
-### `yarn build`
+### **Technologies Used**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React.js
+- Node.js
+- Express.js
+- JavaScript
+- CSS
+- MongoDB
+- Mongoose
+- Token-based authentication
+- Third-party API
+- AJAX
+- RESTful routing
+- Dotenv
+- Bcrypt
+- Deployed on Heroku
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Screenshots**
 
-### `yarn eject`
+<img src="public/image1.png">
+Log In page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="public/image2.png">
+Generator page as a user
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="public/image3.png">
+A generated movie
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="public/image4.png">
+Watchlist page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+<img src="public/image5.png">
+Faves page 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **Getting Started**
 
-### Making a Progressive Web App
+You can access my app [here](https://thecouchpotato.herokuapp.com/), and the repo [here]https://github.com/samrevanoor/couchpotato).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I used [this Trello board](https://trello.com/b/rUBdn7QQ/project-4-couch-potato) for my project planning and user stories.
 
-### Advanced Configuration
+<details>
+    <summary>Click to expand to view my wireframes.</summary>
+    <img src="public/wireframes.png"><br>
+    <img src="public/wireframes1.png"><br>
+    <img src="public/wireframes2.png"><br>
+    <img src="public/wireframes3.png"><br>
+    <img src="public/wireframes4.png"><br>
+    <img src="public/wireframes5.png"><br>
+    <img src="public/wireframes6.png"><br>
+    <img src="public/wireframes7.png"><br>
+    <img src="public/wireframes8.png"><br>
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Here is my ERD: <br>
+<img src="public/erd.png">
 
-### Deployment
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+------
 
-### `yarn build` fails to minify
+### **Next Steps**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Building out filter functionality on the Faves and Watchlist page
+<br>
+
+------
+
+Thank you for reading! Enjoy using the app and please share feedback 😊
