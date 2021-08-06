@@ -40,27 +40,26 @@ For my final project, I decided to create a movie generator app called Couch Pot
 
 ### **Screenshots**
 
-<img src="public/image1.png">
 Log In page
 
 <br>
 
-<img src="public/image2.png">
+<img src="public/image1.png">
 Generator page as a user
 
 <br>
 
-<img src="public/image3.png">
+<img src="public/image2.png">
 A generated movie
 
 <br>
 
-<img src="public/image4.png">
+<img src="public/image3.png">
 Watchlist page
 
 <br>
 
-<img src="public/image5.png">
+<img src="public/image4.png">
 Faves page 
 
 <br>
