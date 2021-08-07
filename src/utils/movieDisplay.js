@@ -13,7 +13,14 @@ async function getWatchlist(user) {
   return result;
 }
 
+async function filterWatchlist(user, genre){
+  const response = await fetch(`${BASE_URL}watchlist/${user}/filter?genre=${genre}`);
+  const result = await response.json();
+  return result;
+}
+
 export default {
   getFaves,
   getWatchlist,
+  filterWatchlist
 };

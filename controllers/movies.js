@@ -1,5 +1,6 @@
 const Movie = require("../models/movie");
 const ObjectId = require("mongodb").ObjectId;
+const genreUtil = require("./utilities/getGenre.js");
 
 async function createFave(req, res, next) {
   req.body.list = "faves";
@@ -47,6 +48,24 @@ function watchlistIndex(req, res, next) {
       console.log("error!", err);
       next(err);
     });
+}
+
+function watchlistFilter(req, res, next){
+  Movie.find({ user: ObjectId(req.params.id), list: "watchlist" })
+  .then(function (movies) {
+    console.log(movies);
+    console.log(req.query.genre);
+    const genreNumber = req.query.genre;
+    genreUtil.getGenreName(genreNumber);
+    movies.forEach(function(movie){
+      console.log(movie.genreList);
+    });
+    res.json(movies);
+  })
+  .catch(function (err) {
+    console.log("error!", err);
+    next(err);
+  });
 }
 
 async function favesDelete(req, res, next) {
@@ -107,4 +126,5 @@ module.exports = {
   favesDelete,
   watchlistDelete,
   watchlistUpdate,
+  watchlistFilter
 };
