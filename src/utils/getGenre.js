@@ -25,7 +25,11 @@ let b = [
   10770, 10752, 37,
 ];
 
-export default function getGenreName(genre) {
+function getGenreName(genre) {
   let index = b.indexOf(genre);
   return a[index];
+}
+
+module.exports = {
+  getGenreName
 }

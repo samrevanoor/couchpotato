@@ -1,9 +1,22 @@
 .Instructions-body {
-    font-size: 22px;
-    cursor: default;
+  cursor: default;
 }
 
 .Instructions-body p {
-    font-size: 16px;
-    margin: 20px 0 30px 0;
+  font-size: 16px;
+  margin: 20px 0 30px 0;
+}
+
+.Instructions-body h3 {
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 500px) {
+  .Instructions-body p {
+    font-size: 12px;
+  }
+
+  .Instructions-body h3 {
+    font-size: 18px;
+  }
 }

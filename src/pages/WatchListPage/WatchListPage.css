@@ -1,17 +1,62 @@
-.WatchListPage-body {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    right: 5%;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.WatchlistPage-body {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  right: 5%;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.WatchlistPage-nomovies {
+  margin: 200px auto;
+  font-family: "Gaegu", cursive;
+}
+
+.WatchlistPage-filter select {
+  font-family: "Gaegu", cursive;
+  background-color: rgba(255, 174, 0, 0.911);
+  background-image: linear-gradient(
+    rgb(255, 223, 148),
+    rgba(255, 174, 0, 0.911)
+  );
+  border-radius: 20px;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.WatchlistPage-filter {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  position: absolute;
+  right: 5%;
+  top: 18%;
+  z-index: 1;
+}
+
+.WatchlistPage-filter label {
+  font-family: "Gaegu", cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 670px) {
+  .WatchlistPage-filter {
+    width: 40%;
+    font-size: 18px;
+    margin-top: 10px;
+    z-index: 1;
   }
   
-  .WatchListPage-nomovies {
-    margin: 200px;
+  .WatchlistPage-filter select {
+    padding: 0;
   }
-  
+
+  .WatchlistPage-filter label {
+    font-size: 16px;
+  }
+}

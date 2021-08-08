@@ -49,6 +49,7 @@
   }
 
   .GeneratorForm-instruction {
+    display: block;
     text-align: center;
   }
 }
@@ -57,8 +58,14 @@
     display: block;
     text-align: center;
   }
-
+  
   .GeneratorForm-form {
     width: 100%;
+  }
+}
+@media only screen and (min-width: 631px) and (max-width: 945px){
+  .GeneratorForm-instruction {
+    display: block;
+    text-align: center;
   }
 }
