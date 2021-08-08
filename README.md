@@ -77,7 +77,7 @@ I used [this Trello board](https://trello.com/b/rUBdn7QQ/project-4-couch-potato)
 
 ### **Next Steps**
 
-- Building out filter functionality on the Faves and Watchlist page
+✔️ Building out filter functionality on the Faves and Watchlist page
 <br>
 
 ------
