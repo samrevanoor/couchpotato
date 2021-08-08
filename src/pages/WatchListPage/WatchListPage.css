@@ -46,10 +46,10 @@
 
 @media only screen and (max-width: 670px) {
   .WatchlistPage-filter {
-      width: 40%;
-      font-size: 16px;
-      margin-top: 10px;
-      z-index: 1;
+    width: 40%;
+    font-size: 18px;
+    margin-top: 10px;
+    z-index: 1;
   }
   .WatchlistPage-filter select {
     padding: 0;
