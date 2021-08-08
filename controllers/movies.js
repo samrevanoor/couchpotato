@@ -81,6 +81,27 @@ function watchlistFilter(req, res, next) {
     .catch(function (err) {
       console.log("error!", err);
       next(err);
+  }
+
+ function watchlistUpdate(req, res, next) {
+  Movie.findById(req.params.id)
+    .then(function (movie) {
+      movie.list = "faves";
+      return movie.save();
+    })
+    .then(function (movie) {
+      const user = movie.user;
+      return user;
+    })
+    .then(function (user) {
+      const newWatchlist = Movie.find({
+        user: ObjectId(user),
+        list: "watchlist",
+      });
+      return newWatchlist;
+    })
+    .then(function (newWatchlist) {
+      res.json(newWatchlist);
     });
 }
 
@@ -111,28 +132,6 @@ async function watchlistDelete(req, res, next) {
   } catch (err) {
     console.log("Error", err);
   }
-}
-
-function watchlistUpdate(req, res, next) {
-  Movie.findById(req.params.id)
-    .then(function (movie) {
-      movie.list = "faves";
-      return movie.save();
-    })
-    .then(function (movie) {
-      const user = movie.user;
-      return user;
-    })
-    .then(function (user) {
-      const newWatchlist = Movie.find({
-        user: ObjectId(user),
-        list: "watchlist",
-      });
-      return newWatchlist;
-    })
-    .then(function (newWatchlist) {
-      res.json(newWatchlist);
-    });
 }
 
 module.exports = {
