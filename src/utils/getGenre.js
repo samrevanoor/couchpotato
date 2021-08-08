@@ -31,8 +31,6 @@ function getGenreName(genre) {
   return a[index];
 }
 
-getGenreName(10402);
-
 module.exports = {
   getGenreName
 }

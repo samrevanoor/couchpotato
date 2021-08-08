@@ -6,6 +6,11 @@
     font-size: 20px;
     text-align: center;
     font-family: 'Gaegu', cursive;
+    z-index: -1;
+}
+
+.LogoutPage-body img {
+    z-index: -1;
 }
 
 @media only screen and (max-width: 500px) {
@@ -18,5 +23,6 @@
 
     .LogoutPage-body img {
         width: 250px;
+        z-index: -1;
     }
 }
