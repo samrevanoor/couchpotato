@@ -62,8 +62,10 @@ class WatchListPage extends Component {
     let display;
     if (!watchlist.length) {
       display = (
-        <div className="WatchlistPage-nomovies">
-          you don't have any movies in your watch list yet!
+        <div className="WatchlistPage-body">
+          <div className="WatchlistPage-nomovies">
+            you don't have any movies in your watch list yet!
+          </div>
         </div>
       );
     } else if (this.state.message) {

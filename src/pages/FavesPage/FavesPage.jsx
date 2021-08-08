@@ -54,8 +54,10 @@ class FavesPage extends Component {
     let display;
     if (!faves.length) {
       display = (
-        <div className="FavesPage-nomovies">
-          you don't have any favourites yet!
+        <div className="FavesPage-body">
+          <div className="FavesPage-nomovies">
+            you don't have any favourites yet!
+          </div>
         </div>
       );
     } else if (this.state.message) {
