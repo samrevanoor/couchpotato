@@ -81,9 +81,10 @@ function watchlistFilter(req, res, next) {
     .catch(function (err) {
       console.log("error!", err);
       next(err);
-  }
+    });
+}
 
- function watchlistUpdate(req, res, next) {
+function watchlistUpdate(req, res, next) {
   Movie.findById(req.params.id)
     .then(function (movie) {
       movie.list = "faves";
