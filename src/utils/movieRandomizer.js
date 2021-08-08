@@ -64,7 +64,6 @@ function randomPage(pages) {
 
 function randomMovie(num) {
   const movieIndex = Math.floor(Math.random() * num) + 1;
-  console.log("Movie index ", movieIndex)
   return movieIndex;
 }
 

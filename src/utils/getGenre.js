@@ -27,7 +27,6 @@ let b = [
 
 function getGenreName(genre) {
   let index = b.indexOf(genre);
-  console.log(a[index]);
   return a[index];
 }
 
